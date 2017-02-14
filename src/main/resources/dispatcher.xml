@@ -17,7 +17,7 @@
     </mvc:annotation-driven>
     <!-- 设置使用注解的类所在的jar包，这里必须排除扫描service层的组件 -->
     <context:component-scan base-package="com.cr">
-<!--         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/> -->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/WEB-INF/pages/"></property>
@@ -44,37 +44,4 @@
 <!--         <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" /> -->
 <!--     </mvc:interceptors> -->
     <mvc:resources mapping="/resources/**" location="/resources/" />
-    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory" />
-    </bean>
-    <tx:advice id="txAdvice" transaction-manager="transactionManager">
-        <tx:attributes>
-            <tx:method name="find*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="get*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="view*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="query*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="select*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="add*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="change*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="recover*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="modify*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
-        </tx:attributes>
-    </tx:advice>
-    
-<!--    <tx:advice id="txCommandProxy" transaction-manager="transactionManager"> -->
-<!--        <tx:attributes> -->
-<!--            <tx:method name="*" propagation="SUPPORTS" read-only="true" /> -->
-<!--        </tx:attributes> -->
-<!--    </tx:advice> -->
-
-    <aop:config proxy-target-class="true">
-        <aop:pointcut id="serviceMethods" expression="execution(* com.cr..service..*.*(..))" />
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
-    </aop:config>
 </beans>
