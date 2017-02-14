@@ -19,7 +19,7 @@ import com.cr.web.bean.PagerInfo;
 public class I18nDaoImpl implements I18nDao {
 
     @Autowired
-    private LocalSessionFactoryBean sessionFactory;
+    private SessionFactory sessionFactory;
 
     public List<I18n> getI18nList(Map<String, Object> param, PagerInfo pager) throws Exception {
         String hsql = "";
@@ -29,7 +29,7 @@ public class I18nDaoImpl implements I18nDao {
             hsql = "from I18n";
         }
         
-        Query query = sessionFactory.getObject().getCurrentSession().createQuery(hsql);
+        Query query = sessionFactory.getCurrentSession().createQuery(hsql);
         if (param.get("language") != null) {
             query.setParameter(0, param.get("language"));
         }
@@ -47,7 +47,7 @@ public class I18nDaoImpl implements I18nDao {
             hsql = "from I18n i18n where i18n.id = ?";// +
                                                       // param.get("language");
         }
-        Query query = sessionFactory.getObject().getCurrentSession().createQuery(hsql);
+        Query query = sessionFactory.getCurrentSession().createQuery(hsql);
         if (param.get("id") != null) {
             query.setParameter(0, Long.parseLong(param.get("id").toString()));
         }
@@ -62,16 +62,16 @@ public class I18nDaoImpl implements I18nDao {
 
     public void addI18n(I18n i18n) throws Exception {
         i18n.setCreateDate(new Date());
-        sessionFactory.getObject().getCurrentSession().save(i18n);
+        sessionFactory.getCurrentSession().save(i18n);
     }
 
     public void updateI18n(I18n i18n) throws Exception {
         i18n.setUpdateDate(new Date());
-        sessionFactory.getObject().getCurrentSession().update(i18n);
+        sessionFactory.getCurrentSession().update(i18n);
     }
 
     public void deleteI18n(Long id) throws Exception {
-        Query query = sessionFactory.getObject().getCurrentSession().createQuery("delete I18n where id = ?");
+        Query query = sessionFactory.getCurrentSession().createQuery("delete I18n where id = ?");
         query.setLong(0, id);
         query.executeUpdate();
         query.executeUpdate();
@@ -86,7 +86,7 @@ public class I18nDaoImpl implements I18nDao {
         } else {
             hsql = "select count(*) from I18n";
         }
-        Query query = sessionFactory.getObject().getCurrentSession().createQuery(hsql);
+        Query query = sessionFactory.getCurrentSession().createQuery(hsql);
         if (param.get("language") != null) {
             query.setParameter(0, param.get("language"));
         }

@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cr.i18n.dao.I18nDao;
+import com.cr.i18n.dao.impl.UserDao;
 import com.cr.web.bean.I18n;
 import com.cr.web.bean.PagerInfo;
+import com.cr.web.bean.User;
 
 
 @Service
@@ -16,6 +18,8 @@ public class I18nSer {
 
     @Autowired
     private I18nDao i18nDao;
+    @Autowired
+    private UserDao userDao;
 
     public List<I18n> getI18nList(Map<String, Object> param, PagerInfo pager) throws Exception{
         return i18nDao.getI18nList(param, pager);
@@ -39,5 +43,29 @@ public class I18nSer {
 
     public int getI18nListCnt(Map<String, Object> params) throws Exception {
         return i18nDao.getI18nListCnt(params);
+    }
+
+    public List<User> getUserList(Map<String, Object> param, PagerInfo pager) throws Exception{
+        return userDao.getUserList(param, pager);
+    }
+
+    public User getUser(Map<String, Object> param) throws Exception {
+        return userDao.getUser(param);
+    }
+
+    public void addUser(User user) throws Exception {
+        userDao.addUser(user);
+    }
+
+    public void updateUser(User user) throws Exception {
+        userDao.updateUser(user);
+    }
+
+    public void deleteUser(Long no) throws Exception {
+        userDao.deleteUser(no);
+    }
+
+    public int getUserListCnt(Map<String, Object> params) throws Exception {
+        return userDao.getUserListCnt(params);
     }
 }

@@ -23,6 +23,7 @@ import com.cr.web.bean.Language;
 import com.cr.web.bean.PagerInfo;
 import com.cr.web.bean.PagerStruct;
 import com.cr.web.bean.RequestResult;
+import com.cr.web.bean.User;
 import com.cr.web.util.RequestSessionUtil;
 
 @Controller
@@ -110,4 +111,71 @@ public class I18nController {
 		}
 		return result;
 	}
+
+	   @RequestMapping(value = "/addOrUpdateUser", method = RequestMethod.POST)
+	    @ResponseBody
+	    public RequestResult<String> addOrUpdateUser(@RequestBody User User) {
+	        RequestResult<String> result = new RequestResult<String>();
+	        try {
+	            if (User.getId() == null || User.getId() == 0) {
+	                this.i18nSer.addUser(User);
+	            } else {
+	                this.i18nSer.updateUser(User);
+	            }
+	        } catch (Exception e) {
+	            logger.error(e.getMessage());
+	            result.setCode(100);
+	            result.setMessage(e.getMessage());
+	        }
+	        return result;
+	    }
+
+	    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+	    @ResponseBody
+	    public RequestResult<String> deleteUser(@RequestParam("no") Long no) {
+	        RequestResult<String> result = new RequestResult<String>();
+	        try {
+	            this.i18nSer.deleteUser(no);
+	            result.setCode(0);
+	        } catch (Exception e) {
+	            logger.error(e.getMessage());
+	            result.setCode(100);
+	            result.setMessage(e.getMessage());
+	        }
+	        return result;
+	    }
+
+	    @RequestMapping(value = "/getUser", method = RequestMethod.POST)
+	    @ResponseBody
+	    public RequestResult<User> getUser(HttpServletRequest request) {
+	        RequestResult<User> result = new RequestResult<User>();
+	        Map<String, Object> params = RequestSessionUtil.getRequestParamData(request);
+	        try {
+	            result.setBody(this.i18nSer.getUser(params));
+	        } catch (Exception e) {
+	            logger.error(e.getMessage());
+	            result.setCode(100);
+	            result.setMessage(e.getMessage());
+	        }
+	        return result;
+	    }
+
+	    @RequestMapping(value = "/getUserList", method = RequestMethod.POST)
+	    @ResponseBody
+	    public PagerStruct<User> getUserList(@RequestParam(value = "keyWord", required = false) String keyWord,
+	            @RequestParam(value = "language", required = false) String languageStr, @PagerResolver PagerInfo pagerParam) {
+	        PagerStruct<User> result = new PagerStruct<User>();
+	        Map<String, Object> params = new HashMap<String, Object>();
+	        params.put("keyWord", keyWord);
+	        Language language = Language.create(languageStr);
+	        params.put("language", language);
+	        try {
+	            result.setRows(this.i18nSer.getUserList(params, pagerParam));
+	            result.setTotal(this.i18nSer.getUserListCnt(params));
+	        } catch (Exception e) {
+	            logger.error(e);
+	            logger.error(e.getMessage());
+	        }
+	        return result;
+	    }
 }
