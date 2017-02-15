@@ -132,10 +132,10 @@ public class I18nController {
 
 	    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
 	    @ResponseBody
-	    public RequestResult<String> deleteUser(@RequestParam("no") Long no) {
+	    public RequestResult<String> deleteUser(@RequestParam("id") Long id) {
 	        RequestResult<String> result = new RequestResult<String>();
 	        try {
-	            this.i18nSer.deleteUser(no);
+	            this.i18nSer.deleteUser(id);
 	            result.setCode(0);
 	        } catch (Exception e) {
 	            logger.error(e.getMessage());

@@ -47,7 +47,7 @@ public class UserDaoImpl implements UserDao {
     public User findById(Long id) {
         try {
             User instance = (User) sessionFactory.getCurrentSession()
-                    .get("user", id);
+                    .get("User", id);
             if (instance==null) {
             }
             else {
@@ -62,7 +62,7 @@ public class UserDaoImpl implements UserDao {
     public List findByExample(User instance) {
         try {
             List results = sessionFactory.getCurrentSession()
-                    .createCriteria("user")
+                    .createCriteria("User")
                     .add(Example.create(instance))
             .list();
             return results;
@@ -78,7 +78,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public List<User> getUserList(Map<String, Object> param, PagerInfo pager) throws Exception {
-        String hsql = "from user";
+        String hsql = "from User order by id desc";
         Query query = sessionFactory.getCurrentSession().createQuery(hsql);
         if (pager != null) {
             query.setMaxResults(pager.getSize());
@@ -95,7 +95,7 @@ public class UserDaoImpl implements UserDao {
     public User getUser(Map<String, Object> param) throws Exception {
         String hsql = "";
         if (param.get("id") != null) {
-            hsql = "from User User where User.id = ?";// +
+            hsql = "from User where id = ?";// +
                                                       // param.get("language");
         }
         Query query = sessionFactory.getCurrentSession().createQuery(hsql);
@@ -143,7 +143,7 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public int getUserListCnt(Map<String, Object> param) throws Exception {
-        String hsql = "select count(*) from user";
+        String hsql = "select count(*) from User";
         Query query = sessionFactory.getCurrentSession().createQuery(hsql);
         Integer count = Integer.parseInt(query.uniqueResult().toString());
         return count;

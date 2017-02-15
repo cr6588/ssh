@@ -61,8 +61,8 @@ public class I18nSer {
         userDao.updateUser(user);
     }
 
-    public void deleteUser(Long no) throws Exception {
-        userDao.deleteUser(no);
+    public void deleteUser(Long id) throws Exception {
+        userDao.deleteUser(id);
     }
 
     public int getUserListCnt(Map<String, Object> params) throws Exception {

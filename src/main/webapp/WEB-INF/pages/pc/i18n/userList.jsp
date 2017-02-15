@@ -15,8 +15,34 @@
 <body>
        <div id="data-grid"></div>
        <script type="text/javascript">
-       var store, grid, win, form;
+       var store, grid, win, form, selectedStoreIndex;
        Ext.onReady(function() {
+           /** 
+            * 处理Grid重新加载过后selectionModel中的记录不更新的问题 
+            * me.selected中存放的是选中的记录的集合 
+            */  
+           Ext.override(Ext.selection.Model,{  
+               onStoreLoad:function(store, records, successful, eOpts){  
+                   var me = this,  
+                       length = me.selected.getCount( );  
+                     
+                   //如果没有选中的记录，则不需要进行任何的操作  
+                   if(length===0)return;  
+                     
+                   //遍历selected并更新其中的记录  
+                   me.selected.eachKey(function(key,item){  
+                       var model = store.getById(key);  
+                         
+                       //如果获取到了model就更新，否则从selected中移除  
+                       if(model){  
+                           me.selected.add(model);//add时会覆盖掉原来的值  
+                       }else{  
+                           me.selected.removeAtKey(key);  
+                       }  
+                   })  
+                     
+               }  
+           });  
            Ext.define('roleModel', {
                extend : 'Ext.data.Model',
                fields : [ "id", "username", "password", "realname", "tel", "address", "company", "sex", "age", "qq", "email" ],
@@ -286,9 +312,11 @@
            });
        });
        function sp_refresh() {
-           store.loadPage(1);
+           //不宜用loadPage(1);
+           store.reload();
        }
        function sp_add() {
+           form.getForm().reset();
            win.setTitle("Add User");
            win.show();
        }
@@ -296,36 +324,38 @@
            var no = null;
            var selection = grid.getView().getSelectionModel().getSelection()[0];
            if(selection){
-               no = selection.data.no;
-               window.location.href = "/crm/editBusinessPartner?no=" + no;
+               selectedStoreIndex = store.indexOf(selection);
+               form.loadRecord(selection);
+               win.setTitle("Update User");
+               win.show();
            }else{
-               Ext.Msg.alert(siping.tools.i18n.getMessage("message.hint"), siping.tools.i18n.getMessage("message.pleaseSelectRow"));
+               Ext.Msg.alert("提示", "请选择用户");
            }
        }
        function sp_delete(){
-           var no = null;
+           var id = null;
            var selection = grid.getView().getSelectionModel().getSelection()[0];
            if (selection != undefined) {
-               no = selection.data.no;
-               Ext.Msg.confirm(siping.tools.i18n.getMessage("message.hint"), siping.tools.i18n.getMessage("message.confirmDelete"), function(res) {
+               id = selection.data.id;
+               Ext.Msg.confirm("提示", "确认删除吗？", function(res) {
                    if(res=="yes") {
-                       $.post(siping.systemParams.get("host") + '/crm/deleteBusiPartner', [ {
-                           name : 'no',
-                           value : no
+                       $.post('/i18n/deleteUser', [ {
+                           name : 'id',
+                           value : id
                        } ], function(result) {
                            if (result.code == 0) {
-                               Ext.Msg.alert(siping.tools.i18n.getMessage("message.hint"), siping.tools.i18n.getMessage("message.deleteSuccess"), function() {
-                                   location.reload();
+                               Ext.Msg.alert("提示", "删除成功", function() {
+                                   sp_refresh();
                                });
                            } else {
-                               Ext.Msg.alert(siping.tools.i18n.getMessage("message.hint"), result.message);
+                               Ext.Msg.alert("提示", result.message);
                            }
                        });
                    } else {
                    }
                });
            }else{
-               Ext.MessageBox.alert(siping.tools.i18n.getMessage("message.hint"), siping.tools.i18n.getMessage("message.pleaseSelectRow"));
+               Ext.MessageBox.alert("提示", "请选择行");
            }
        }
        </script>
