@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="
-	http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-	http://www.springframework.org/schema/aop
-	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-	<!-- create by 2011-09-05 -->
-	<!-- author 陈默涵 -->
-	<!-- category 数据库事务配置 -->
-	<aop:aspectj-autoproxy />
+    <!-- create by 2011-09-05 -->
+    <!-- author 陈默涵 -->
+    <!-- category 数据库事务配置 -->
+    <aop:aspectj-autoproxy />
 
+    <bean class="com.cr.web.db.DataSourceAspect" id="dataSourceAspect">
+        <!-- 指定事务策略 -->  
+        <property name="txAdvice" ref="txAdvice"/>  
+        <!-- 指定slave方法的前缀（非必须） -->  
+        <property name="slaveMethodStart" value="query,find,get"/>  
+    </bean>
+
+<!--     <bean id="logAspectBean" class="com.siping.web.log.SystemLogAspect" > -->
+<!--     </bean> -->
+    <aop:config>
+        <aop:aspect id="switchDataSourceAspect" ref="dataSourceAspect">
+            <aop:pointcut id="logPoint" expression="execution(* com.cr..service..*.*(..))" />
+            <aop:before pointcut-ref="logPoint" arg-names="point" method="before" />
+        </aop:aspect>
+    </aop:config>
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="find*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="get*" propagation="REQUIRED" rollback-for="true"/>
+            <tx:method name="get*" propagation="REQUIRED" read-only="true"/>
             <tx:method name="view*" propagation="REQUIRED" read-only="true"/>
             <tx:method name="query*" propagation="REQUIRED" read-only="true"/>
             <tx:method name="select*" propagation="REQUIRED" read-only="true"/>
@@ -31,7 +46,7 @@
             <tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception"/>
             <tx:method name="modify*" propagation="REQUIRED" rollback-for="Exception"/>
-            <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+<!--             <tx:method name="*" propagation="SUPPORTS" read-only="true"/> -->
         </tx:attributes>
     </tx:advice>
     
