@@ -1,0 +1,233 @@
+spring aop 控制读写分离 + mysql router控制路由转发+mysql主从
+spring aop 控制读写分离
+DynamicDataSource:继承AbstractRoutingDataSources重写determineCurrentLookupKey方法决定使用读写库
+DynamicDataSourceHolder:使用ThreadLocal保证线程安全，并且得到当前线程中的数据源key
+DataSourceAspect:setTxAdvice读取事务中只读与其它方法名 before在方法执行前执行，根据方法名称是否在事务中的只读判断方法执行所使用的数据库
+切面配置
+    <bean class="com.cr.web.db.DataSourceAspect" id="dataSourceAspect">
+        <!-- 指定事务策略 -->  
+        <property name="txAdvice" ref="txAdvice"/>  
+        <!-- 指定slave方法的前缀（非必须） -->  
+        <property name="slaveMethodStart" value="query,find,get"/>  
+    </bean>
+    <aop:config>
+        <aop:aspect id="switchDataSourceAspect" ref="dataSourceAspect">
+            <aop:pointcut id="logPoint" expression="execution(* com.cr..service..*.*(..))" />
+            <aop:before pointcut-ref="logPoint" arg-names="point" method="before" />
+        </aop:aspect>
+    </aop:config>
+多数据源配置
+    <bean id="dataSource" class="com.cr.web.db.DynamicDataSource">  
+        <!-- 设置多个数据源 -->  
+        <property name="targetDataSources">  
+            <map key-type="java.lang.String">  
+                <!-- 这个key需要和程序中的key一致 -->  
+                <entry key="master" value-ref="masterDataSource"/>  
+                <entry key="slave" value-ref="slave01DataSource"/>  
+            </map>  
+        </property>  
+        <!-- 设置默认的数据源，这里默认走写库 -->  
+        <property name="defaultTargetDataSource" ref="masterDataSource"/>  
+    </bean>
+每个数据源配置
+<bean id="masterDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    ...//跟普通的c3p0配置一样，因为使用了mysql router所以这里并不是直接指向数据库的url,而是mysql router监听的读写库地址，然后交给它进行转发，
+</bean>
+mysql router控制路由转发
+windows使用压缩包,不要使用安装包
+修改share\doc\mysqlrouter\sample_mysqlrouter.ini配置文件
+[DEFAULT]
+logging_folder = D:\mysqlroute\
+#plugin_folder = D:\mysqlroute
+#runtime_folder = D:\mysqlroute
+#config_folder = D:\mysqlroute
+
+[logger]
+level = info
+[keepalive]
+interval = 60
+
+#读库配置，ro名称自定义
+[routing:ro]
+#程序中的读库指向此地址
+bind_address = 127.0.0.1
+bind_port = 7002
+#只读mysql节点多个用,隔开
+destinations = 192.168.1.159:3306
+#只读模式
+mode = read-only
+#读写库配置
+[routing:rw]
+connect_timeout = 3
+#程序中的写库指向此地址
+bind_address = 127.0.0.1
+bind_port = 7001
+#读写mysql节点多个用,隔开
+destinations = 127.0.0.1:3306
+#读写模式
+mode = read-write
+
+mysql主从
+主从库用一样mysql版本
+主库配置
+[mysqld]
+port=3306
+character_set_server=utf8
+#开启主从复制，主库的配置
+log-bin= mysql3306-bin
+#指定主库serverid
+server-id=101
+#指定同步的数据库，如果不指定则同步全部数据库
+binlog-do-db=cy
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+配置完了重启mysql
+执行SQL语句查询状态：
+SHOW MASTER STATUS;
++----------------------+-----------+--------------+------------------+-------------------+
+| File                 | Position  | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++----------------------+-----------+--------------+------------------+-------------------+
+| mysql3306-bin.000007 | 367031433 | cy           |                  |                   |
++----------------------+-----------+--------------+------------------+-------------------+
+记住Position后不再更改主库
+从库配置
+[client]
+port=3306
+default-character-set=utf8
+[mysqld]
+port=3306
+character_set_server=utf8
+
+server-id=102
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+执行SQL语句设置主库：
+CHANGE MASTER TO MASTER_HOST='192.168.1.171',master_user='dev',master_password='dev',master_port=3306,master_log_file='mysql3306-bin.000007',master_log_pos=367031433;
+#启动slave同步
+START SLAVE;
+#查看同步状态
+SHOWSLAVE STATUS\G;
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 192.168.1.171
+                  Master_User: dev
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: mysql3306-bin.000007
+          Read_Master_Log_Pos: 367031433
+               Relay_Log_File: v7-PC-relay-bin.000021
+                Relay_Log_Pos: 17489725
+        Relay_Master_Log_File: mysql3306-bin.000007
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB:
+          Replicate_Ignore_DB:
+           Replicate_Do_Table:
+       Replicate_Ignore_Table:
+      Replicate_Wild_Do_Table:
+  Replicate_Wild_Ignore_Table:
+                   Last_Errno: 0
+                   Last_Error:
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 367031433
+              Relay_Log_Space: 17489898
+              Until_Condition: None
+               Until_Log_File:
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File:
+           Master_SSL_CA_Path:
+              Master_SSL_Cert:
+            Master_SSL_Cipher:
+               Master_SSL_Key:
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error:
+               Last_SQL_Errno: 0
+               Last_SQL_Error:
+  Replicate_Ignore_Server_Ids:
+             Master_Server_Id: 101
+                  Master_UUID: 410c5ec8-ee8b-11e6-a65d-1c1b0da3b617
+             Master_Info_File: E:\mysql-5.6.35-winx64\data\master.info
+                    SQL_Delay: 0
+          SQL_Remaining_Delay: NULL
+      Slave_SQL_Running_State: Slave has read all relay log; waiting for the sla
+ve I/O thread to update it
+           Master_Retry_Count: 86400
+                  Master_Bind:
+      Last_IO_Error_Timestamp:
+     Last_SQL_Error_Timestamp:
+               Master_SSL_Crl:
+           Master_SSL_Crlpath:
+           Retrieved_Gtid_Set:
+            Executed_Gtid_Set:
+                Auto_Position: 0
+1 row in set (0.00 sec)
+
+ERROR:
+No query specified
+
+如果
+        Slave_IO_Running: Yes
+        Slave_SQL_Running: Yes
+则同步设置成功
+不要再更改从库要同步的库的数据
+
+索引
+在用户表中先建立对用户名的索引username，运行explain select count(*) from user;
++----+-------------+-------+-------+---------------+----------+---------+------+--------+-------------+
+| id | select_type | table | type  | possible_keys | key      | key_len | ref  | rows   | Extra       |
++----+-------------+-------+-------+---------------+----------+---------+------+--------+-------------+
+|  1 | SIMPLE      | user  | index | NULL          | username | 63      | NULL | 992501 | Using index |
++----+-------------+-------+-------+---------------+----------+---------+------+--------+-------------+
+说明会用名为username的索引，运行select count(*) from user;
+mysql> select count(*) from user;
++----------+
+| count(*) |
++----------+
+|  5050004 |
++----------+
+1 row in set (29.76 sec)
+加入对主键id的索引id_index,运行select count(*) from user;
+mysql> select count(*) from user;
++----------+
+| count(*) |
++----------+
+|  5050004 |
++----------+
+1 row in set (0.59 sec)
+可以看出运行效果显著提升，所以需要分页显示表的总数时需要加入一个对主键建立的索引；
+再看强制使用mysql默认建立的主键索引的查询
+mysql> select count(*) from user FORCE INDEX (PRIMARY);
++----------+
+| count(*) |
++----------+
+|  5050004 |
++----------+
+1 row in set (25.74 sec)
+再看强制使用username的索引查询
+mysql> select count(*) from user FORCE INDEX (username);
++----------+
+| count(*) |
++----------+
+|  5050004 |
++----------+
+1 row in set (3 min 47.34 sec)
+最后参考
+http://blog.csdn.net/wgw335363240/article/details/6295906
+结论
+1.       没有任何条件的查询不一定走的是主键索引，mysql优化器会使用认为是最小代价的索引
+2.       在count(*)的时候，采用主键索引比二级索引要慢，而且慢的原因不是因为两者的索引的长度不同
+3.       Count(*)在没有查询条件的情况下，对innodb引擎的mysql会进行全表扫描，而myasm引擎的mysql无需进行全表扫描，因为myasm的引擎记录了每个表的多少记录。但是当有查询条件的时候，两者的查询效率一致。
+4.       经过后来查询大量的资料，主键索引count(*)的时候之所以慢
+l  InnoDB引擎
+[1]     数据文件和索引文件存储在一个文件中，主键索引默认直接指向数据存储位置。
+[2]     二级索引存储指定字段的索引，实际的指向位置是主键索引。当我们通过二级索引统计数据的时候，无需扫描数据文件；而通过主键索引统计数据时，由于主键索引与数据文件存放在一起，所以每次都会扫描数据文件，所以主键索引统计没有二级索引效率高。
+[3]     由于主键索引直接指向实际数据，所以当我们通过主键id查询数据时要比通过二级索引查询数据要快。
+
+联合索引又叫复合索引。对于复合索引：Mysql从左到右的使用索引中的字段，一个查询可以只使用索引中的一部份，但只能是最左侧部分。例如索引是key index （a,b,c）。 可以支持a | a,b| a,b,c 3种组合进行查找，但不支持 b,c进行查找 .当最左侧字段是常量引用时，索引就十分有效。
+
+    两个或更多个列上的索引被称作复合索引。
+
+    利用索引中的附加列，您可以缩小搜索的范围，但使用一个具有两列的索引 不同于使用两个单独的索引。复合索引的结构与电话簿类似，人名由姓和名构成，电话簿首先按姓氏对进行排序，然后按名字对有相同姓氏的人进行排序。如果您知 道姓，电话簿将非常有用；如果您知道姓和名，电话簿则更为有用，但如果您只知道名不姓，电话簿将没有用处。
+
+    所以说创建复合索引时，应该仔细考虑列的顺序。对索引中的所有列执行搜索或仅对前几列执行搜索时，复合索引非常有用；仅对后面的任意列执行搜索时，复合索引则没有用处。
