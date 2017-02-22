@@ -12,21 +12,6 @@
     <!-- category 数据库事务配置 -->
     <aop:aspectj-autoproxy />
 
-    <bean class="com.cr.web.db.DataSourceAspect" id="dataSourceAspect">
-        <!-- 指定事务策略 -->  
-        <property name="txAdvice" ref="txAdvice"/>  
-        <!-- 指定slave方法的前缀（非必须） -->  
-        <property name="slaveMethodStart" value="query,find,get"/>  
-    </bean>
-
-<!--     <bean id="logAspectBean" class="com.siping.web.log.SystemLogAspect" > -->
-<!--     </bean> -->
-    <aop:config>
-        <aop:aspect id="switchDataSourceAspect" ref="dataSourceAspect">
-            <aop:pointcut id="logPoint" expression="execution(* com.cr..service..*.*(..))" />
-            <aop:before pointcut-ref="logPoint" arg-names="point" method="before" />
-        </aop:aspect>
-    </aop:config>
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
