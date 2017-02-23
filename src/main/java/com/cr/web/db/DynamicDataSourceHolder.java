@@ -14,7 +14,7 @@ public class DynamicDataSourceHolder {
      * 设置数据源key
      * @param key
      */
-    public static void putDataSourceKey(String key) {
+    public static void setDataSourceKey(String key) {
         holder.set(key);
     }
 
@@ -30,14 +30,14 @@ public class DynamicDataSourceHolder {
      * 标记写库
      */
     public static void markMaster() {
-        putDataSourceKey(MASTER);
+        setDataSourceKey(MASTER);
     }
 
     /**
      * 标记读库
      */
     public static void markSlave() {
-        putDataSourceKey(SLAVE);
+        setDataSourceKey(SLAVE);
     }
 
 }

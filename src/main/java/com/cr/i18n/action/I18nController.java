@@ -1,5 +1,7 @@
 package com.cr.i18n.action;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -178,4 +180,32 @@ public class I18nController {
 	        }
 	        return result;
 	    }
+
+    @RequestMapping(value = "/getSelectTest", method = RequestMethod.POST)
+    @ResponseBody
+    public RequestResult<StringBuilder> getSelectTest(@RequestParam(value = "page") int page) {
+        RequestResult<StringBuilder> result = new RequestResult<StringBuilder>();
+        try {
+            i18nSer.getTime(1); //第一次时间跨度大不取
+            long totalTime = i18nSer.getTime(1) + i18nSer.getTime(1) + i18nSer.getTime(1);
+            BigDecimal firstPageTime = new BigDecimal(totalTime).divide(new BigDecimal(3), 2 , RoundingMode.HALF_UP);
+            StringBuilder sb = new StringBuilder("");
+            sb.append("第一页三次查询总耗时：" + totalTime + ",平均值：" + firstPageTime.toString() + "<br>");
+            int mediumPage = page;
+            totalTime = i18nSer.getTime(mediumPage) + i18nSer.getTime(mediumPage) + i18nSer.getTime(mediumPage);
+            BigDecimal mediumPageTime = new BigDecimal(totalTime).divide(new BigDecimal(3), 2 , RoundingMode.HALF_UP);
+            sb.append("第" + mediumPage + "页三次查询总耗时：" + totalTime + ",平均值：" + mediumPageTime.toString() + "<br>");
+            int lastPage = mediumPage * 2;
+            totalTime = i18nSer.getTime(lastPage) + i18nSer.getTime(lastPage) + i18nSer.getTime(lastPage);
+            BigDecimal lastPageTime = new BigDecimal(totalTime).divide(new BigDecimal(3), 2 , RoundingMode.HALF_UP);
+            sb.append("第" + lastPage + "页三次查询总耗时：" + totalTime + ",平均值：" + lastPageTime.toString() + "<br>");
+            result.setBody(sb);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            result.setCode(100);
+            result.setMessage(e.getMessage());
+        }
+        return result;
+    }
+
 }
