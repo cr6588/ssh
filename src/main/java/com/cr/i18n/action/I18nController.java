@@ -173,8 +173,7 @@ public class I18nController {
 	            result.setRows(this.i18nSer.getUserList(params, pagerParam));
 	            result.setTotal(this.i18nSer.getUserListCnt(params));
 	        } catch (Exception e) {
-	            logger.error(e);
-	            logger.error(e.getMessage());
+                logger.error(e.getMessage());
 	        }
 	        return result;
 	    }
