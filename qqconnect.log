@@ -1,0 +1,482 @@
+2350 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.format.support.FormattingConversionServiceFactoryBean#0'
+2350 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0'
+2350 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0'
+2350 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2350 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2403 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0' to allow for resolving potential circular references
+2419 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#4'
+2419 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2419 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2425 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.format.support.FormattingConversionServiceFactoryBean#0'
+2426 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2426 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2426 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2426 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2427 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#4'
+2427 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#5'
+2427 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2427 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2435 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2435 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2435 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2435 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2441 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#5'
+2442 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#6'
+2442 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2442 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2453 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2453 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2453 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2453 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2455 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#6'
+2455 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#7'
+2455 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2455 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2462 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2462 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2462 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2462 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2462 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#7'
+2463 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#8'
+2463 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2463 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2473 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2473 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2474 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2474 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2480 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#8'
+2480 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#9'
+2480 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2481 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2487 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2487 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2487 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2487 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2491 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#9'
+2491 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#10'
+2491 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2491 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2503 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2503 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2503 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2503 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2508 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#10'
+2508 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#11'
+2508 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2508 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2644 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2644 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2644 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2644 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2649 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#11'
+2650 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'com.cr.web.util.PagerArgumentResolver#0'
+2650 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2650 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2652 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2653 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2653 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2653 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2653 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'com.cr.web.util.PagerArgumentResolver#0'
+2653 DEBUG [2017-02-23 13:46:44]  Invoking afterPropertiesSet() on bean with name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0'
+2671 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2671 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2671 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2671 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2675 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0'
+2675 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.web.servlet.handler.MappedInterceptor#0'
+2675 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0'
+2675 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0'
+2675 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2675 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2677 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0' to allow for resolving potential circular references
+2684 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#12'
+2684 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2684 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2685 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2685 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2685 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2685 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2685 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#12'
+2685 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#13'
+2685 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2685 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#13'
+2686 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#14'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2686 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#14'
+2687 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#15'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2687 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2688 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#15'
+2688 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#16'
+2688 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2688 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2689 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2689 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2689 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2689 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2690 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#16'
+2690 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#17'
+2690 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2690 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2690 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2690 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2690 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2690 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2691 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#17'
+2691 DEBUG [2017-02-23 13:46:44]  Creating instance of bean '(inner bean)#18'
+2691 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2691 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2691 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2691 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2691 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2691 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2691 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean '(inner bean)#18'
+2692 DEBUG [2017-02-23 13:46:44]  Invoking afterPropertiesSet() on bean with name 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0'
+2692 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2692 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2692 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2692 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2694 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0'
+2695 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0'
+2695 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0'
+2695 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2695 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2695 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0' to allow for resolving potential circular references
+2700 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2700 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2701 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2701 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2701 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0'
+2701 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0'
+2701 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0'
+2701 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2701 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2701 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0' to allow for resolving potential circular references
+2707 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2707 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2707 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2707 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2707 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0'
+2707 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping'
+2707 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping'
+2707 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2707 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2708 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping' to allow for resolving potential circular references
+2722 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.web.servlet.handler.MappedInterceptor#0'
+2723 DEBUG [2017-02-23 13:46:44]  Looking for URL mappings in application context: org.springframework.context.support.GenericApplicationContext@6f3b5d16: startup date [Thu Feb 23 13:46:42 CST 2017]; root of context hierarchy
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'i18nDaoImpl': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'userDaoImpl': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'i18nSer': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'mysqlDialect': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'sessionFactory': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'masterDataSource': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'slave01DataSource': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'dataSource': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'dataSourceAspect': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'logPoint': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'transactionManager': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'txAdvice': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'serviceMethods': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.format.support.FormattingConversionServiceFactoryBean#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.handler.MappedInterceptor#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'i18nController': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'ruterController': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'webController': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'freemarkerConfig': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'freeMarkerViewResolver': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.view.InternalResourceViewResolver#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0': no URL paths identified
+2723 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0': no URL paths identified
+2724 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'environment': no URL paths identified
+2724 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'systemProperties': no URL paths identified
+2724 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'systemEnvironment': no URL paths identified
+2724 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'importRegistry': no URL paths identified
+2724 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'messageSource': no URL paths identified
+2724 DEBUG [2017-02-23 13:46:44]  Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2724 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2724 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2724 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2724 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2726 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping'
+2726 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter'
+2726 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter'
+2726 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2726 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2726 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter' to allow for resolving potential circular references
+2729 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2729 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2729 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2729 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2729 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter'
+2730 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter'
+2730 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter'
+2730 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2730 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2730 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter' to allow for resolving potential circular references
+2732 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2732 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2732 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2732 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2733 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter'
+2733 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'i18nController'
+2733 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'i18nController'
+2733 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2733 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2733 DEBUG [2017-02-23 13:46:44]  Found injected element on class [com.cr.i18n.action.I18nController]: AutowiredFieldElement for private com.cr.i18n.service.I18nSer com.cr.i18n.action.I18nController.i18nSer
+2733 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'i18nController' to allow for resolving potential circular references
+2736 DEBUG [2017-02-23 13:46:44]  Processing injected method of bean 'i18nController': AutowiredFieldElement for private com.cr.i18n.service.I18nSer com.cr.i18n.action.I18nController.i18nSer
+2736 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'i18nSer'
+2736 DEBUG [2017-02-23 13:46:44]  Autowiring by type from bean name 'i18nController' to bean named 'i18nSer'
+2736 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2736 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2736 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2736 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2737 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'i18nController'
+2737 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'ruterController'
+2737 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'ruterController'
+2737 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2737 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2737 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'ruterController' to allow for resolving potential circular references
+2739 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2739 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2739 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2740 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2740 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'ruterController'
+2740 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'webController'
+2740 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'webController'
+2740 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2740 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2740 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'webController' to allow for resolving potential circular references
+2743 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2743 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2743 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2743 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2743 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'webController'
+2744 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'freemarkerConfig'
+2744 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'freemarkerConfig'
+2744 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2744 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2749 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'freemarkerConfig' to allow for resolving potential circular references
+2755 DEBUG [2017-02-23 13:46:44]  Invoking afterPropertiesSet() on bean with name 'freemarkerConfig'
+2815 DEBUG [2017-02-23 13:46:44]  Cannot resolve template loader path [/WEB-INF/pages/] to [java.io.File]: using SpringTemplateLoader as fallback
+java.io.FileNotFoundException: class path resource [WEB-INF/pages/] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:179)
+	at org.springframework.core.io.AbstractFileResolvingResource.getFile(AbstractFileResolvingResource.java:48)
+	at org.springframework.ui.freemarker.FreeMarkerConfigurationFactory.getTemplateLoaderForPath(FreeMarkerConfigurationFactory.java:351)
+	at org.springframework.ui.freemarker.FreeMarkerConfigurationFactory.createConfiguration(FreeMarkerConfigurationFactory.java:304)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer.afterPropertiesSet(FreeMarkerConfigurer.java:114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:103)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:1)
+	at org.springframework.test.context.support.DelegatingSmartContextLoader.loadContext(DelegatingSmartContextLoader.java:228)
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:124)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:148)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:321)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:288)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:290)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:48)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+2819 INFO  [2017-02-23 13:46:44]  SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.context.support.GenericApplicationContext@6f3b5d16: startup date [Thu Feb 23 13:46:42 CST 2017]; root of context hierarchy] and template loader path [/WEB-INF/pages/]
+2820 INFO  [2017-02-23 13:46:44]  ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2821 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2821 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2821 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2822 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2823 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'freemarkerConfig'
+2824 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'freeMarkerViewResolver'
+2824 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'freeMarkerViewResolver'
+2824 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2824 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2830 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'freeMarkerViewResolver' to allow for resolving potential circular references
+2847 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2847 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2848 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2848 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2848 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2848 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2848 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2848 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2848 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2848 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2849 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2849 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2849 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2849 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2849 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2849 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2849 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2852 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'freeMarkerViewResolver'
+2852 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.view.InternalResourceViewResolver#0'
+2852 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.view.InternalResourceViewResolver#0'
+2852 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2852 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2855 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.view.InternalResourceViewResolver#0' to allow for resolving potential circular references
+2866 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2866 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2866 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2866 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2867 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.view.InternalResourceViewResolver#0'
+2867 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2867 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2867 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2868 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2870 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0' to allow for resolving potential circular references
+2880 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2880 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2880 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2880 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2880 DEBUG [2017-02-23 13:46:44]  Initializing new StandardEnvironment
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemProperties] PropertySource with lowest search precedence
+2880 DEBUG [2017-02-23 13:46:44]  Adding [systemEnvironment] PropertySource with lowest search precedence
+2881 DEBUG [2017-02-23 13:46:44]  Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2881 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2881 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2881 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2881 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2882 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2882 DEBUG [2017-02-23 13:46:44]  Creating shared instance of singleton bean 'org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0'
+2882 DEBUG [2017-02-23 13:46:44]  Creating instance of bean 'org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0'
+2882 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2882 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2882 DEBUG [2017-02-23 13:46:44]  Eagerly caching bean 'org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0' to allow for resolving potential circular references
+2893 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.web.servlet.handler.MappedInterceptor#0'
+2893 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2894 INFO  [2017-02-23 13:46:44]  Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2894 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2894 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2894 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2894 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2895 DEBUG [2017-02-23 13:46:44]  Finished creating instance of bean 'org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0'
+2895 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0'
+2896 DEBUG [2017-02-23 13:46:44]  Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@695c938d]
+2897 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'lifecycleProcessor'
+2903 DEBUG [2017-02-23 13:46:44]  Storing ApplicationContext for test class [class ssh.com.cr.i18n.ser.i18nSerTest] in cache under key [[MergedContextConfiguration@75f9eccc testClass = i18nSerTest, locations = '{classpath:spring-db.xml, classpath:spring-aop.xml, classpath:dispatcher.xml}', classes = '{}', activeProfiles = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader']].
+2907 DEBUG [2017-02-23 13:46:44]  Found injected element on class [ssh.com.cr.i18n.ser.i18nSerTest]: AutowiredFieldElement for com.cr.i18n.service.I18nSer ssh.com.cr.i18n.ser.i18nSerTest.i18nSer
+2907 DEBUG [2017-02-23 13:46:44]  Found injected element on class [ssh.com.cr.i18n.ser.i18nSerTest]: AutowiredFieldElement for private org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean ssh.com.cr.i18n.ser.i18nSerTest.sessionFactory
+2907 DEBUG [2017-02-23 13:46:44]  Processing injected method of bean 'ssh.com.cr.i18n.ser.i18nSerTest': AutowiredFieldElement for com.cr.i18n.service.I18nSer ssh.com.cr.i18n.ser.i18nSerTest.i18nSer
+2907 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'i18nSer'
+2907 DEBUG [2017-02-23 13:46:44]  Autowiring by type from bean name 'ssh.com.cr.i18n.ser.i18nSerTest' to bean named 'i18nSer'
+2907 DEBUG [2017-02-23 13:46:44]  Processing injected method of bean 'ssh.com.cr.i18n.ser.i18nSerTest': AutowiredFieldElement for private org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean ssh.com.cr.i18n.ser.i18nSerTest.sessionFactory
+2908 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'sessionFactory'
+2908 DEBUG [2017-02-23 13:46:44]  Autowiring by type from bean name 'ssh.com.cr.i18n.ser.i18nSerTest' to bean named '&sessionFactory'
+2908 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2908 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2908 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2908 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+2912 DEBUG [2017-02-23 13:46:44]  Adding transactional method 'selectDy' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2913 DEBUG [2017-02-23 13:46:44]  Explicit transaction definition [PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''] found for test context [[TestContext@275710fc testClass = i18nSerTest, testInstance = ssh.com.cr.i18n.ser.i18nSerTest@525f1e4e, testMethod = selectDy@i18nSerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@75f9eccc testClass = i18nSerTest, locations = '{classpath:spring-db.xml, classpath:spring-aop.xml, classpath:dispatcher.xml}', classes = '{}', activeProfiles = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader']]]
+2913 DEBUG [2017-02-23 13:46:44]  Retrieved @TransactionConfiguration [@org.springframework.test.context.transaction.TransactionConfiguration(defaultRollback=false, transactionManager=transactionManager)] for test class [class ssh.com.cr.i18n.ser.i18nSerTest]
+2913 DEBUG [2017-02-23 13:46:44]  Retrieved TransactionConfigurationAttributes [[TransactionConfigurationAttributes@4d634127 transactionManagerName = 'transactionManager', defaultRollback = false]] for class [class ssh.com.cr.i18n.ser.i18nSerTest]
+2914 DEBUG [2017-02-23 13:46:44]  Retrieved ApplicationContext for test class [class ssh.com.cr.i18n.ser.i18nSerTest] from cache with key [[MergedContextConfiguration@75f9eccc testClass = i18nSerTest, locations = '{classpath:spring-db.xml, classpath:spring-aop.xml, classpath:dispatcher.xml}', classes = '{}', activeProfiles = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader']].
+2914 DEBUG [2017-02-23 13:46:44]  Returning cached instance of singleton bean 'transactionManager'
+2918 DEBUG [2017-02-23 13:46:44]  Creating new transaction with name [selectDy]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2941 DEBUG [2017-02-23 13:46:44]  Opened new Session [org.hibernate.impl.SessionImpl@63300c4b] for Hibernate transaction
+2942 DEBUG [2017-02-23 13:46:44]  Preparing JDBC Connection of Hibernate Session [org.hibernate.impl.SessionImpl@63300c4b]
+2949 DEBUG [2017-02-23 13:46:44]  trace com.mchange.v2.resourcepool.BasicResourcePool@4f63e3c7 [managed: 12, unused: 11, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@4f754cf)
+2951 DEBUG [2017-02-23 13:46:44]  Exposing Hibernate transaction as JDBC transaction [com.mchange.v2.c3p0.impl.NewProxyConnection@798256c5]
+2952 DEBUG [2017-02-23 13:46:44]  No method-level @Rollback override: using default rollback [false] for test context [[TestContext@275710fc testClass = i18nSerTest, testInstance = ssh.com.cr.i18n.ser.i18nSerTest@525f1e4e, testMethod = selectDy@i18nSerTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@75f9eccc testClass = i18nSerTest, locations = '{classpath:spring-db.xml, classpath:spring-aop.xml, classpath:dispatcher.xml}', classes = '{}', activeProfiles = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader']]]
+2952 INFO  [2017-02-23 13:46:44]  Began transaction (1): transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@748a654a]; rollback [false]
+61550 DEBUG [2017-02-23 13:47:43]  Refurbishing idle resources - Thu Feb 23 13:47:43 CST 2017 [com.mchange.v2.resourcepool.BasicResourcePool@4f63e3c7]
+61553 DEBUG [2017-02-23 13:47:43]  trace com.mchange.v2.resourcepool.BasicResourcePool@4f63e3c7 [managed: 12, unused: 11, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@4f754cf)
+61554 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@183ef5af] on IDLE CHECK.
+61554 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@314813e9] on IDLE CHECK.
+61554 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@4f754cf] on IDLE CHECK.
+61558 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@183ef5af] on IDLE CHECK has SUCCEEDED.
+61558 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@191c5898] on IDLE CHECK.
+61558 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@314813e9] on IDLE CHECK has SUCCEEDED.
+61558 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@661412c5] on IDLE CHECK.
+61558 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@4f754cf] on IDLE CHECK has SUCCEEDED.
+61559 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@6f6c811f] on IDLE CHECK.
+61562 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@191c5898] on IDLE CHECK has SUCCEEDED.
+61562 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@6f6c811f] on IDLE CHECK has SUCCEEDED.
+61562 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@661412c5] on IDLE CHECK has SUCCEEDED.
+61562 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@fc6bdcc] on IDLE CHECK.
+61562 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@6ba78f07] on IDLE CHECK.
+61562 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@6d42329] on IDLE CHECK.
+61565 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@fc6bdcc] on IDLE CHECK has SUCCEEDED.
+61565 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@6d42329] on IDLE CHECK has SUCCEEDED.
+61565 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@6ba78f07] on IDLE CHECK has SUCCEEDED.
+61565 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@55923da5] on IDLE CHECK.
+61565 DEBUG [2017-02-23 13:47:43]  Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@3c74b9ff] on IDLE CHECK.
+61567 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@55923da5] on IDLE CHECK has SUCCEEDED.
+61567 DEBUG [2017-02-23 13:47:43]  Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@3c74b9ff] on IDLE CHECK has SUCCEEDED.

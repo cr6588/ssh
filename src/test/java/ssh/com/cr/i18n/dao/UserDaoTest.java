@@ -60,7 +60,7 @@ public class UserDaoTest {
         long totalTime = getTime(1) + getTime(1) + getTime(1);
         BigDecimal firstPageTime = new BigDecimal(totalTime).divide(new BigDecimal(3), 2 , RoundingMode.HALF_UP);
         System.out.println("三次查询总耗时：" + totalTime + ",平均值：" + firstPageTime.toString());
-        int mediumPage = 500;
+        int mediumPage = 50000;
         totalTime = getTime(mediumPage) + getTime(mediumPage) + getTime(mediumPage);
         BigDecimal mediumPageTime = new BigDecimal(totalTime).divide(new BigDecimal(3), 2 , RoundingMode.HALF_UP);
         System.out.println("三次查询总耗时：" + totalTime + ",平均值：" + mediumPageTime.toString());
