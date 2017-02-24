@@ -25,7 +25,7 @@ import com.cr.web.bean.User;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring-db.xml", "classpath:spring-aop.xml" })
 @Transactional
-@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = false)
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class I18nDaoTest {
 
     @Autowired

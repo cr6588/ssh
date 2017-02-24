@@ -1,5 +1,6 @@
 package com.cr.i18n.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import com.cr.i18n.dao.impl.UserDao;
 import com.cr.web.bean.I18n;
 import com.cr.web.bean.PagerInfo;
 import com.cr.web.bean.User;
+import com.cr.web.db.DynamicDataSourceHolder;
 
 
 @Service
@@ -67,5 +69,16 @@ public class I18nSer {
 
     public int getUserListCnt(Map<String, Object> params) throws Exception {
         return userDao.getUserListCnt(params);
+    }
+
+    public long getTime(int page) throws Exception {
+        Map<String, Object> map = new HashMap<String, Object>();
+        PagerInfo pager = new PagerInfo();
+        pager.setPage(page);
+        pager.setSize(10);
+        long start = System.currentTimeMillis();
+        userDao.getUserList(map, pager);
+        long end = System.currentTimeMillis();
+        return end - start;
     }
 }
