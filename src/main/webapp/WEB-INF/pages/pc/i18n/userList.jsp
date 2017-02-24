@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/resources/css/ext4.2.1/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
-<!-- <link href="/resources/js/ext4.2.1/modern/theme-cupertino/resources/theme-cupertino-all.css" rel="stylesheet" type="text/css" /> -->
-       <script type="text/javascript" src="/resources/js/jquery/jquery-1.10.2.js"></script>
-       <script src="/resources/js/ext4.2.1/ext-all.js" type="text/javascript" ></script>
-       <script src="/resources/js/ext4.2.1/ext-lang-zh_CN.js" type="text/javascript" ></script>
+<link href="/ssh/resources/css/ext4.2.1/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
+<!-- <link href="/ssh/resources/js/ext4.2.1/modern/theme-cupertino/resources/theme-cupertino-all.css" rel="stylesheet" type="text/css" /> -->
+       <script type="text/javascript" src="/ssh/resources/js/jquery/jquery-1.10.2.js"></script>
+       <script type="text/javascript" src="/ssh/resources/js/common/common.js"></script>
+       <script src="/ssh/resources/js/ext4.2.1/ext-all.js" type="text/javascript" ></script>
+       <script src="/ssh/resources/js/ext4.2.1/ext-lang-zh_CN.js" type="text/javascript" ></script>
 <!--        <script src="/resources/js/ext4.2.1/ext-modern-all.js" type="text/javascript" ></script> -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>国际化列表</title>
@@ -55,7 +56,7 @@
            autoLoad : true,
            proxy : {
                type : 'ajax',
-               url : '/i18n/getUserList',
+               url : hostName + '/i18n/getUserList',
                actionMethods:{
                    create: "POST", read: "POST", update: "POST", destroy: "POST"
                },
@@ -280,7 +281,7 @@
 //                            }
                             var o = form.getValues();
                             $.ajax({
-                                    url : '/i18n/addOrUpdateUser',
+                                    url : hostName + '/i18n/addOrUpdateUser',
                                     type : "post",
                                     contentType: "application/json",
                                     data : JSON.stringify(o),
@@ -339,7 +340,7 @@
                id = selection.data.id;
                Ext.Msg.confirm("提示", "确认删除吗？", function(res) {
                    if(res=="yes") {
-                       $.post('/i18n/deleteUser', [ {
+                       $.post(hostName + '/i18n/deleteUser', [ {
                            name : 'id',
                            value : id
                        } ], function(result) {

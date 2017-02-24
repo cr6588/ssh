@@ -22,7 +22,7 @@
     <context:property-placeholder location="classpath:jdbc.properties" />
     <context:annotation-config/>
     <context:component-scan base-package="com.cr">
-<!--         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" /> -->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 
 <!--     <bean id="sessionFactory" class="com.sjdf.platform.common.filter.EncryptAnnotationSessionFactoryBean"> -->
@@ -122,8 +122,6 @@
         <property name="idleConnectionTestPeriod" value="60"/>
         <!-- 获取Connnection时测试是否有效 -->
         <property name="testConnectionOnCheckin" value="true"/>
-        <!-- 在每个connection提交的   时候都将校验其有效性（性能消耗大） -->
-<!--         <property name="testConnectionOnCheckout" value="true"/> -->
     </bean>
 
     <bean id="slave01DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
@@ -163,8 +161,8 @@
                 <!-- 这个key需要和程序中的key一致 -->  
                 <entry key="master" value-ref="masterDataSource"/>  
                 <entry key="slave" value-ref="slave01DataSource"/>  
-            </map>  
-        </property>  
+            </map>
+        </property>
         <!-- 设置默认的数据源，这里默认走写库 -->  
         <property name="defaultTargetDataSource" ref="masterDataSource"/>  
     </bean> 
