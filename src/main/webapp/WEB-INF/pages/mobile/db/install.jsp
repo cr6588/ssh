@@ -6,9 +6,6 @@
 <%
     String hostName = request.getContextPath();
 %>
-<meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
-<meta name="viewport" content=" height = device-height , width = device-width , initial-scale = 1 ,
-         minimum-scale = 1 , maximum-scale = 1 , user-scalable = no" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="<%out.print(hostName);%>/resources/js/bootstrap-select-1.12.2/dist/css/bootstrap-select.css">
 <script src="<%out.print(hostName);%>/resources/js/bootstrap-select-1.12.2/js/jquery-3.1.1.min.js"></script>
@@ -34,26 +31,25 @@
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
-                <form role="form" action="<%out.print(hostName);%>/db/installDb" method="POST">
+                <form role="form">
                     <div class="form-group">
-                        <label for="path">path</label><input type="text" class="form-control" id="path" name="path"/>
+                        <label for="exampleInputEmail1">Email address</label><input type="email" class="form-control" id="exampleInputEmail1" />
                     </div>
                     <div class="form-group">
-                        <label for="port">port</label><input type="text" class="form-control" id="port" name="port"/>
+                        <label for="exampleInputPassword1">Password</label><input type="password" class="form-control" id="exampleInputPassword1" />
                     </div>
                     <div class="form-group">
-                        <label for="serviceName">serviceName</label><input type="text" class="form-control" id="serviceName" name="serviceName"/>
+                        <label for="exampleInputFile">File input</label><input type="file" id="exampleInputFile" />
+                        <p class="help-block">Example block-level help text here.</p>
                     </div>
-<!--                     <div class="form-group"> -->
-<!--                         <label for="dbPath">File input</label><input type="file" id="dbPath" name="dbPath"/> -->
-<!--                     </div> -->
-                     <button type="submit" class="btn btn-default" >Submit</button>
+                    <div class="checkbox">
+                        <label><input type="checkbox" />Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
                 </form>
+                <button type="button" class="btn btn-default">按钮</button>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-       
-    </script>
 </body>
 </html>

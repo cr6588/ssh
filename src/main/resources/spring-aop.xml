@@ -21,12 +21,6 @@
 
 <!--     <bean id="logAspectBean" class="com.siping.web.log.SystemLogAspect" > -->
 <!--     </bean> -->
-    <aop:config>
-        <aop:aspect id="switchDataSourceAspect" ref="dataSourceAspect">
-            <aop:pointcut id="logPoint" expression="execution(* com.cr..service..*.*(..))" />
-            <aop:before pointcut-ref="logPoint" arg-names="point" method="before" />
-        </aop:aspect>
-    </aop:config>
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
@@ -50,12 +44,6 @@
         </tx:attributes>
     </tx:advice>
     
-<!--    <tx:advice id="txCommandProxy" transaction-manager="transactionManager"> -->
-<!--        <tx:attributes> -->
-<!--            <tx:method name="*" propagation="SUPPORTS" read-only="true" /> -->
-<!--        </tx:attributes> -->
-<!--    </tx:advice> -->
-
     <aop:config proxy-target-class="true">
         <aop:pointcut id="serviceMethods" expression="execution(* com.cr..service..*.*(..))" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
