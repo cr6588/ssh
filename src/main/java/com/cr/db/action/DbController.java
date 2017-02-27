@@ -1,8 +1,11 @@
 package com.cr.db.action;
 
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.Enumeration;
 
@@ -26,8 +29,10 @@ import com.cr.web.util.RequestSessionUtil;
 @Controller
 @RequestMapping("/db")
 public class DbController {
+    private static final String LogKey = "installLog";
+
     Logger logger = Logger.getLogger(DbController.class);
-    
+
     @RequestMapping(value = "/{pageName}", method = RequestMethod.GET)
     public ModelAndView viewAdminManagePages(HttpServletRequest request, @PathVariable("pageName") String pageName) throws Exception {
         String path = RequestSessionUtil.getDevicePath(request) + "/db/" + pageName;
@@ -36,12 +41,18 @@ public class DbController {
 
     @RequestMapping(value = "/installDb", method = RequestMethod.POST)
     @ResponseBody
-    public RequestResult<String> installDb(HttpServletRequest request, @RequestParam String path,
-                                           @RequestParam String port, @RequestParam String serviceName) {
+    public RequestResult<String> installDb(HttpServletRequest request, @RequestParam String srcPath,
+                                           @RequestParam String port, @RequestParam String serviceName,
+                                           @RequestParam(required = false, value = "unZipPath") String unZipPath) {
         RequestResult<String> result = new RequestResult<String>();
         try {
-            decompress(path, "d:/", null);
+            String iniPath = decompress(srcPath, unZipPath, request);
+            StringBuffer sb = (StringBuffer)request.getAttribute(LogKey);
+            deal(sb, 0, "更改mysql配置文件");
+            updMysqlConfig(iniPath + File.separator);
+            deal(sb, 0, "更改mysql配置文件完成");
         } catch (Exception e) {
+            e.printStackTrace();
             logger.error(e.getMessage());
             result.setCode(100);
             result.setMessage(e.getMessage());
@@ -49,18 +60,20 @@ public class DbController {
         return result;
     }
 
-    @RequestMapping(value = "/installLog", method = RequestMethod.POST)
+    @RequestMapping(value = "/getInstallLog", method = RequestMethod.POST)
     @ResponseBody
-    public RequestResult<String> installLog(HttpServletRequest request) {
+    public RequestResult<String> getInstallLog(HttpServletRequest request) {
         RequestResult<String> result = new RequestResult<String>();
         try {
             HttpSession session = request.getSession();
-            Object o = session.getAttribute("installLog");
-            if(o != null) {
-                StringBuffer sb = (StringBuffer) o;
-                result.setBody(sb.toString());
+            StringBuffer sb = (StringBuffer) session.getAttribute(LogKey);
+            if(sb != null && sb.length() != 0) {
+                String log = sb.toString();
+                result.setBody(log);
+                deal(sb, log.length(), null);
             }
         } catch (Exception e) {
+            e.printStackTrace();
             logger.error(e.getMessage());
             result.setCode(100);
             result.setMessage(e.getMessage());
@@ -68,31 +81,59 @@ public class DbController {
         return result;
     }
 
-    public static void decompress(String srcPath, String dest, HttpServletRequest request) throws Exception {
+    public synchronized static void deal(StringBuffer sb,Integer len, String appendStr) {
+        if(len != 0) {
+            sb.delete(0, len);
+        } else {
+            sb.append(appendStr);
+        }
+    }
+
+    public static String decompress(String srcPath, String dest, HttpServletRequest request) throws Exception {
         File file = new File(srcPath);
         if (!file.exists()) {
             throw new RuntimeException(srcPath + "所指文件不存在");
+        }
+        if(dest == null || dest.equals("")) {
+            dest = file.getParent();
         }
         ZipFile zf = new ZipFile(file);
         Enumeration<ZipEntry> entries = zf.getEntries();
         ZipEntry entry = null;
         StringBuffer sb = new StringBuffer();
-        request.getSession().setAttribute("installLog", sb);
+        HttpSession session = request.getSession();
+        session.setAttribute(LogKey, sb);
+        int line = 0;
+        String lastFirstDir = null; //上次entry一级目录
+        String decompressDir = null;//解压目录，若压缩文件含有一层根目录则返回该根目录所在路径，否则返回dest路径
         while (entries.hasMoreElements()) {
             entry = (ZipEntry) entries.nextElement();
-            sb.append("解压" + entry.getName() + "\r\n");
+            if(decompressDir == null) {
+                String curfirstDir = null;
+                if(entry.getName().contains("/")) { //File.separator windows:\\ entry.getName(): mysql-5.6.35-winx64/bin/echo.exe
+                    String[] dirs = entry.getName().split("/");
+                    curfirstDir = dirs[0];
+                    if(lastFirstDir == null) {
+                        lastFirstDir = curfirstDir;
+                    }
+                    if(!lastFirstDir.equals(curfirstDir)) {
+                        decompressDir = dest;
+                    }
+                } else {
+                    decompressDir = dest;
+                }
+                lastFirstDir = curfirstDir;
+            }
+            System.out.print(++line +"解压" + entry.getName() + "\r\n");
+            deal(sb, 0, line + "解压" + entry.getName() + "<br>");
             if (entry.isDirectory()) {
                 String dirPath = dest + File.separator + entry.getName();
                 File dir = new File(dirPath);
                 dir.mkdirs();
             } else {
-                // 表示文件
                 File f = new File(dest + File.separator + entry.getName());
-                if (!f.exists()) {
-//                    String dirs = FileUtils.getParentPath(f);
-                    String dirs = f.getParent();
-                    File parentDir = new File(dirs);
-                    parentDir.mkdirs();
+                if (!f.getParentFile().exists()) {
+                    f.getParentFile().mkdirs();
                 }
                 f.createNewFile();
                 // 将压缩文件内容写入到这个文件中
@@ -107,5 +148,30 @@ public class DbController {
                 fos.close();
             }
         }
+
+        if(decompressDir == null) {
+            decompressDir = dest + lastFirstDir;
+        }
+        return decompressDir;
+    }
+
+    public String updMysqlConfig(String configPath) throws Exception {
+        StringBuilder sb = new StringBuilder();
+        BufferedReader iniRead = new BufferedReader(new FileReader(configPath));
+        String str = null;
+        while((str = iniRead.readLine()) != null) {
+            if(str.startsWith("[mysqld]")) {
+                sb.append("[client]\r\nport=3306\r\ndefault-character-set=utf8\r\n");
+                sb.append(str + "\r\n");
+                sb.append("port=3306\r\ndefault-character-set=utf8\r\n");
+            } else {
+                sb.append(str + "\r\n");
+            }
+        }
+        iniRead.close();
+        FileWriter iniWrite = new FileWriter(configPath);
+        iniWrite.write(sb.toString());
+        iniWrite.close();
+        return sb != null ? sb.toString() : null;
     }
 }

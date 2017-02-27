@@ -20,6 +20,7 @@ D:\git\ssh\src\main\java\com\cr\web\bean\User.java
 D:\git\ssh\src\main\java\com\cr\web\util\BaseHibernateDao.java
 D:\git\ssh\src\main\java\com\cr\web\message\Messages.java
 D:\git\ssh\src\main\java\com\cr\i18n\dao\I18nDao.java
+D:\git\ssh\src\main\java\com\cr\db\action\DbController.java
 D:\git\ssh\src\main\java\com\cr\i18n\action\I18nController.java
 D:\git\ssh\src\main\java\com\cr\web\limit\dialect\MysqlDialect.java
 D:\git\ssh\src\main\java\com\cr\web\limit\dialect\OracleDialect.java
