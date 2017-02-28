@@ -17,6 +17,7 @@ D:\git\ssh\src\main\java\com\cr\web\message\MessageUtil.java
 D:\git\ssh\src\main\java\com\cr\i18n\dao\impl\I18nDaoImpl.java
 D:\git\ssh\src\main\java\com\cr\web\db\DynamicDataSource.java
 D:\git\ssh\src\main\java\com\cr\web\bean\User.java
+D:\git\ssh\src\main\java\com\cr\web\util\OSUtil.java
 D:\git\ssh\src\main\java\com\cr\web\util\BaseHibernateDao.java
 D:\git\ssh\src\main\java\com\cr\web\message\Messages.java
 D:\git\ssh\src\main\java\com\cr\i18n\dao\I18nDao.java

@@ -25,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cr.web.bean.RequestResult;
 import com.cr.web.util.RequestSessionUtil;
+import com.cr.web.util.OSUtil;
 
 @Controller
 @RequestMapping("/db")
@@ -45,13 +46,34 @@ public class DbController {
                                            @RequestParam String port, @RequestParam String serviceName,
                                            @RequestParam(required = false, value = "unZipPath") String unZipPath) {
         RequestResult<String> result = new RequestResult<String>();
+        StringBuffer sb = new StringBuffer();
         try {
-            String iniPath = decompress(srcPath, unZipPath, request);
-            StringBuffer sb = (StringBuffer)request.getAttribute(LogKey);
-            deal(sb, 0, "更改mysql配置文件");
-            updMysqlConfig(iniPath + File.separator);
-            deal(sb, 0, "更改mysql配置文件完成");
+            HttpSession session = request.getSession();
+            session.setAttribute(LogKey, sb);
+            String iniPath = decompress(srcPath, unZipPath, sb) + File.separator;
+            updInstallLog(sb, 0, "解压完成<br>");
+            updInstallLog(sb, 0, "更改mysql配置文件<br>");
+            updMysqlConfig(iniPath + "my-default.ini", port);
+            updInstallLog(sb, 0, "更改mysql配置文件完成<br>");
+            updInstallLog(sb, 0, "将mysql安装成服务<br>");
+            if(OSUtil.isWindows()) {
+                //must be run as admin mode
+                String cmdStr = "cmd /c " + iniPath + "bin/mysqld.exe  install " + serviceName + " --defaults-file=\"" + iniPath + "my-default.ini\"";
+                String cmdReStr = OSUtil.exeCmd(cmdStr);
+                updInstallLog(sb, 0, cmdReStr + "<br>");
+                if(!cmdReStr.contains("Service successfully installed.")) {
+                    throw new Exception("安装服务失败<br>");
+                }
+                updInstallLog(sb, 0, "安装服务成功<br>");
+                cmdStr = "net start " + serviceName;
+                cmdReStr = OSUtil.exeCmd(cmdStr);
+                updInstallLog(sb, 0, cmdReStr + "<br>");
+                if(cmdReStr.contains("Exited with error code ")) {
+                    throw new Exception("启动失败<br>");
+                }
+            }
         } catch (Exception e) {
+            updInstallLog(sb, 0, e.getMessage());
             e.printStackTrace();
             logger.error(e.getMessage());
             result.setCode(100);
@@ -70,7 +92,7 @@ public class DbController {
             if(sb != null && sb.length() != 0) {
                 String log = sb.toString();
                 result.setBody(log);
-                deal(sb, log.length(), null);
+                updInstallLog(sb, log.length(), null);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,7 +103,7 @@ public class DbController {
         return result;
     }
 
-    public synchronized static void deal(StringBuffer sb,Integer len, String appendStr) {
+    public synchronized static void updInstallLog(StringBuffer sb,Integer len, String appendStr) {
         if(len != 0) {
             sb.delete(0, len);
         } else {
@@ -89,7 +111,7 @@ public class DbController {
         }
     }
 
-    public static String decompress(String srcPath, String dest, HttpServletRequest request) throws Exception {
+    public static String decompress(String srcPath, String dest, StringBuffer sb) throws Exception {
         File file = new File(srcPath);
         if (!file.exists()) {
             throw new RuntimeException(srcPath + "所指文件不存在");
@@ -100,9 +122,6 @@ public class DbController {
         ZipFile zf = new ZipFile(file);
         Enumeration<ZipEntry> entries = zf.getEntries();
         ZipEntry entry = null;
-        StringBuffer sb = new StringBuffer();
-        HttpSession session = request.getSession();
-        session.setAttribute(LogKey, sb);
         int line = 0;
         String lastFirstDir = null; //上次entry一级目录
         String decompressDir = null;//解压目录，若压缩文件含有一层根目录则返回该根目录所在路径，否则返回dest路径
@@ -125,7 +144,7 @@ public class DbController {
                 lastFirstDir = curfirstDir;
             }
             System.out.print(++line +"解压" + entry.getName() + "\r\n");
-            deal(sb, 0, line + "解压" + entry.getName() + "<br>");
+            updInstallLog(sb, 0, line + "解压" + entry.getName() + "<br>");
             if (entry.isDirectory()) {
                 String dirPath = dest + File.separator + entry.getName();
                 File dir = new File(dirPath);
@@ -155,15 +174,15 @@ public class DbController {
         return decompressDir;
     }
 
-    public String updMysqlConfig(String configPath) throws Exception {
+    public String updMysqlConfig(String configPath, String port) throws Exception {
         StringBuilder sb = new StringBuilder();
         BufferedReader iniRead = new BufferedReader(new FileReader(configPath));
         String str = null;
         while((str = iniRead.readLine()) != null) {
             if(str.startsWith("[mysqld]")) {
-                sb.append("[client]\r\nport=3306\r\ndefault-character-set=utf8\r\n");
+                sb.append("[client]\r\nport=" + port + "\r\ndefault-character-set=utf8\r\n"); //!!!!与下处utf-8设置不同
                 sb.append(str + "\r\n");
-                sb.append("port=3306\r\ndefault-character-set=utf8\r\n");
+                sb.append("port=" + port + "\r\ncharacter_set_server=utf8\r\n");
             } else {
                 sb.append(str + "\r\n");
             }

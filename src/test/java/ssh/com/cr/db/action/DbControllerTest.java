@@ -67,7 +67,7 @@ public class DbControllerTest {
             if(str.startsWith("[mysqld]")) {
                 sb.append("[client]\r\nport=3306\r\ndefault-character-set=utf8\r\n");
                 sb.append(str + "\r\n");
-                sb.append("port=3306\r\ndefault-character-set=utf8\r\n");
+                sb.append("port=3306\r\ncharacter_set_server=utf8\r\n");
             } else {
                 sb.append(str + "\r\n");
             }

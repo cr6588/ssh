@@ -24,6 +24,7 @@ com\cr\i18n\action\I18nController.class
 com\cr\web\bean\Language.class
 com\cr\web\message\DataBaseMessageResource.class
 com\cr\web\action\RuterController.class
+com\cr\db\action\DbController.class
 com\cr\i18n\service\I18nSer.class
 com\cr\web\bean\MasterData.class
 com\cr\i18n\dao\impl\UserDao.class

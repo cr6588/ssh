@@ -36,13 +36,13 @@
             <div class="col-md-12 column">
                 <form role="form"  method="POST">
                     <div class="form-group">
-                        <label for="path">path</label><input type="text" class="form-control" id="path" name="path" value="D:\mysql-5.6.35-winx64.zip"/>
+                        <label for="srcPath">srcPath</label><input type="text" class="form-control" id="srcPath" name="srcPath" value="D:\mysql-5.6.35-winx64.zip"/>
                     </div>
                     <div class="form-group">
-                        <label for="port">port</label><input type="text" class="form-control" id="port" name="port" value="3309"/>
+                        <label for="port">port</label><input type="text" class="form-control" id="port" name="port" value="3308"/>
                     </div>
                     <div class="form-group">
-                        <label for="serviceName">serviceName</label><input type="text" class="form-control" id="serviceName" name="serviceName" value="mysql_3309"/>
+                        <label for="serviceName">serviceName</label><input type="text" class="form-control" id="serviceName" name="serviceName" value="mysql_3308"/>
                     </div>
 <!--                     <div class="form-group"> -->
 <!--                         <label for="dbPath">File input</label><input type="file" id="dbPath" name="dbPath"/> -->
@@ -58,25 +58,24 @@
     </div>
     <script type="text/javascript">
        function installDb() {
+           $(".btn.e").attr("disabled",true); 
            $.post('<%out.print(hostName);%>/db/installDb', $("form").serialize(), function(result) {
                clearInterval(interval);
-               if(result.code == 0) {
-                   //暂停后有可能最后一次日志没打印出来
-                   getLog("解压完成");
-               }
+//                if(result.code == 0) {
+//                    getLog();
+//                }
+               //暂停后有可能最后一次日志没打印出来
+               getLog();
            });
-           function getLog(str) {
+           function getLog() {
                $.post('<%out.print(hostName);%>/db/getInstallLog', function(result) {
                    if(result.code == 0) {
                        $("#log").append(result.body);
-                       if(str) {
-                           $("#log").append(str);
-                       }
                        $("#log").scrollTop($("#log")[0].scrollHeight);
                    }
                });
            }
-//            var interval = setInterval(getLog, 300); //getLog()无效
+           var interval = setInterval(getLog, 300); //getLog()无效
        }
     </script>
 </body>

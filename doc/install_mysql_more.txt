@@ -1,0 +1,9 @@
+[client]
+port=3308
+default-character-set=utf8
+[mysqld]
+port=3308
+character_set_server=utf8
+[client]与[mysqld]中设置utf8的key不一样
+安装多个msyql实例时mysqld请使用各自mysql目录时的mysqld,
+安装命令使用D:/mysql-5.6.35-winx64/bin/mysqld.exe  install mysql-3309 --defaults-file="D:/mysql-5.6.35-winx64/my-default.ini"
