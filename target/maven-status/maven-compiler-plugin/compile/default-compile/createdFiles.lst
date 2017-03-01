@@ -17,6 +17,7 @@ com\cr\web\annotation\PagerResolver.class
 com\cr\web\db\DataSourceAspect.class
 com\cr\web\util\BaseHibernateDao.class
 com\cr\web\util\PagerArgumentResolver.class
+com\cr\web\util\OSUtil.class
 com\cr\web\limit\dialect\MysqlDialect.class
 com\cr\web\bean\PagerStruct.class
 com\cr\web\limit\dialect\OracleDialect.class
