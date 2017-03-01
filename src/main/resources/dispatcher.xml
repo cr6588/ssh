@@ -17,23 +17,23 @@
     </mvc:annotation-driven>
     <!-- 设置使用注解的类所在的jar包，这里必须排除扫描service层的组件 -->
     <context:component-scan base-package="com.cr">
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+<!--         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/> -->
     </context:component-scan>
-    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-        <property name="templateLoaderPath" value="/WEB-INF/pages/"></property>
-        <property name="freemarkerSettings">
-            <props>
-                <prop key="defaultEncoding">UTF-8</prop>
-            </props>
-        </property>
-    </bean>
-    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="cache" value="true"></property>
-        <property name="prefix" value=""></property>
-        <property name="suffix" value=".ftl"></property>
-        <property name="order" value="1"></property>
-        <property name="contentType"> <value>text/html;charset=UTF-8</value></property>
-    </bean>
+<!--     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"> -->
+<!--         <property name="templateLoaderPath" value="/WEB-INF/pages/"></property> -->
+<!--         <property name="freemarkerSettings"> -->
+<!--             <props> -->
+<!--                 <prop key="defaultEncoding">UTF-8</prop> -->
+<!--             </props> -->
+<!--         </property> -->
+<!--     </bean> -->
+<!--     <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"> -->
+<!--         <property name="cache" value="true"></property> -->
+<!--         <property name="prefix" value=""></property> -->
+<!--         <property name="suffix" value=".ftl"></property> -->
+<!--         <property name="order" value="1"></property> -->
+<!--         <property name="contentType"> <value>text/html;charset=UTF-8</value></property> -->
+<!--     </bean> -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/" />
         <property name="suffix" value=".jsp" />
