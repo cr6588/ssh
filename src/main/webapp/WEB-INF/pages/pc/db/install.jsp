@@ -60,6 +60,7 @@
        function installDb() {
            $(".btn.e").attr("disabled",true); 
            $.post('<%out.print(hostName);%>/db/installDb', $("form").serialize(), function(result) {
+        	   console.log("wht");
                clearInterval(interval);
 //                if(result.code == 0) {
 //                    getLog();
@@ -75,7 +76,7 @@
                    }
                });
            }
-//            var interval = setInterval(getLog, 300); //getLog()无效
+           var interval = setInterval(getLog, 300); //getLog()无效
        }
     </script>
 </body>

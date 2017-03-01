@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cr.web.bean.RequestResult;
+import com.cr.web.db.JDBC;
 import com.cr.web.util.RequestSessionUtil;
 import com.cr.web.util.OSUtil;
 
@@ -48,30 +49,31 @@ public class DbController {
         RequestResult<String> result = new RequestResult<String>();
         StringBuffer sb = new StringBuffer();
         try {
-//            HttpSession session = request.getSession();
-//            session.setAttribute(LogKey, sb);
-//            String iniPath = decompress(srcPath, unZipPath, sb) + File.separator;
-//            updInstallLog(sb, 0, "解压完成<br>");
-//            updInstallLog(sb, 0, "更改mysql配置文件<br>");
-//            updMysqlConfig(iniPath + "my-default.ini", port);
-//            updInstallLog(sb, 0, "更改mysql配置文件完成<br>");
-//            updInstallLog(sb, 0, "将mysql安装成服务<br>");
-//            if(OSUtil.isWindows()) {
-//                //must be run as admin mode
-//                String cmdStr = "cmd /c " + iniPath + "bin/mysqld.exe  install " + serviceName + " --defaults-file=\"" + iniPath + "my-default.ini\"";
-//                String cmdReStr = OSUtil.exeCmd(cmdStr);
-//                updInstallLog(sb, 0, cmdReStr + "<br>");
-//                if(!cmdReStr.contains("Service successfully installed.")) {
-//                    throw new Exception("安装服务失败<br>");
-//                }
-//                updInstallLog(sb, 0, "安装服务成功<br>");
-//                cmdStr = "net start " + serviceName;
-//                cmdReStr = OSUtil.exeCmd(cmdStr);
-//                updInstallLog(sb, 0, cmdReStr + "<br>");
-//                if(cmdReStr.contains("Exited with error code ")) {
-//                    throw new Exception("启动失败<br>");
-//                }
-//            }
+            HttpSession session = request.getSession();
+            session.setAttribute(LogKey, sb);
+            String iniPath = decompress(srcPath, unZipPath, sb) + File.separator;
+            updInstallLog(sb, 0, "解压完成<br>");
+            updInstallLog(sb, 0, "更改mysql配置文件<br>");
+            updMysqlConfig(iniPath + "my-default.ini", port);
+            updInstallLog(sb, 0, "更改mysql配置文件完成<br>");
+            updInstallLog(sb, 0, "将mysql安装成服务<br>");
+            if(OSUtil.isWindows()) {
+                //must be run as admin mode
+                String cmdStr = "cmd /c " + iniPath + "bin/mysqld.exe  install " + serviceName + " --defaults-file=\"" + iniPath + "my-default.ini\"";
+                String cmdReStr = OSUtil.exeCmd(cmdStr);
+                updInstallLog(sb, 0, cmdReStr + "<br>");
+                if(!cmdReStr.contains("Service successfully installed.")) {
+                    throw new Exception("安装服务失败<br>");
+                }
+                updInstallLog(sb, 0, "安装服务成功<br>");
+                cmdStr = "net start " + serviceName;
+                cmdReStr = OSUtil.exeCmd(cmdStr);
+                updInstallLog(sb, 0, cmdReStr + "<br>");
+                if(cmdReStr.contains("Exited with error code ")) {
+                    throw new Exception("启动失败<br>");
+                }
+            }
+            JDBC.initRoot(null, null,  null,  "123456");
         } catch (Exception e) {
             updInstallLog(sb, 0, e.getMessage());
             e.printStackTrace();
