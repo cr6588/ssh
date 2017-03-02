@@ -1,0 +1,9 @@
+@ResponseBody收到请求没有正常返回出现406
+The resource identified by this request is only capable of generating respon
+http://stackoverflow.com/questions/4069903/spring-mvc-not-returning-json-content-error-406
+需要引入Jackson
+<dependency>
+	<groupId>org.codehaus.jackson</groupId>
+	<artifactId>jackson-mapper-asl</artifactId>
+	<version>1.8.5</version>
+</dependency>

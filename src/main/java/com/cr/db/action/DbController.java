@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cr.web.bean.RequestResult;
+import com.cr.web.db.JDBC;
 import com.cr.web.util.RequestSessionUtil;
 import com.cr.web.util.OSUtil;
 
@@ -72,6 +73,7 @@ public class DbController {
                     throw new Exception("启动失败<br>");
                 }
             }
+            JDBC.initRoot(null, null,  null,  "123456");
         } catch (Exception e) {
             updInstallLog(sb, 0, e.getMessage());
             e.printStackTrace();
