@@ -73,7 +73,7 @@ public class DbController {
                     throw new Exception("启动失败<br>");
                 }
             }
-            JDBC.initRoot(null, null,  null,  "123456");
+            JDBC.initUser(null, port,  null,  "654321");
         } catch (Exception e) {
             updInstallLog(sb, 0, e.getMessage());
             e.printStackTrace();

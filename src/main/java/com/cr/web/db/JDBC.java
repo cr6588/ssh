@@ -150,17 +150,26 @@ public class JDBC {
         }
     }
 
-    public static void initRoot(String url, String port , String oldPassword, String newPassword) {
+    /**
+     * 初始化用户数据
+     * 设置root密码为newPassword，删除任意@localhost用户，增加用户名密码为dev的用户，刷新权限
+     * @param url mysql地址 eg:31.56.145.45 默认localhost
+     * @param port 端口 默认3306
+     * @param oldPassword 旧密码 默认null
+     * @param newPassword 新密码
+     */
+    public static void initUser(String url, String port , String oldPassword, String newPassword) {
         if(url == null || url.equals("")) {
             url = "localhost";
         }
         url = "jdbc:mysql://" + url + ":" + (port == null || port.equals("") ? "3306" : port) + "/mysql?user=root&password=&allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8";
         JDBC jdbc = new JDBC(url, "root", oldPassword);
-        String updPassword = "UPDATE user SET password=PASSWORD('" + newPassword + "') WHERE user='root'";
+        StringBuilder sql = new StringBuilder("UPDATE user SET password=PASSWORD('" + newPassword + "') WHERE user='root';");
         try {
-            jdbc.setSql(updPassword);
-            jdbc.getPstmt().execute(updPassword);
-            jdbc.setSql("FLUSH PRIVILEGES");
+            sql.append("DELETE FROM user Where User='' and Host='localhost';"); //删除 @localhost用户
+            sql.append(getAddDevUserSql());
+            sql.append("FLUSH PRIVILEGES");
+            jdbc.setSql(sql.toString());
             jdbc.getPstmt().execute(jdbc.getSql());
         } catch (Exception e) {
             e.printStackTrace();
@@ -171,6 +180,16 @@ public class JDBC {
             e.printStackTrace();
         }
     }
+
+    public static String getAddDevUserSql(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("CREATE USER 'dev'@'%' IDENTIFIED BY 'dev';");
+        sb.append("GRANT GRANT OPTION ON *.* TO 'dev'@'%';");
+        sb.append("GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER ON *.* TO 'dev'@'%';");
+        return sb.toString();
+    }
+
+    
     public static void main(String[] args) throws Exception {
         JDBC jdbc = new JDBC("jdbc:mysql://localhost:3306/test?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8", "dev", "dev");
         String sql = "select * from i18n";

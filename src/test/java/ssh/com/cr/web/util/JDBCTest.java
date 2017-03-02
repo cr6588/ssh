@@ -8,7 +8,7 @@ public class JDBCTest {
 
     @Test
     public void test() {
-        JDBC.initRoot(null, "3308",  "6543212",  "6543212");
+        JDBC.initUser(null, "3308",  null,  "654321");
     }
 
 }

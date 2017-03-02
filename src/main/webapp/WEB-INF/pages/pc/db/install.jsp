@@ -36,13 +36,13 @@
             <div class="col-md-12 column">
                 <form role="form"  method="POST">
                     <div class="form-group">
-                        <label for="srcPath">srcPath</label><input type="text" class="form-control" id="srcPath" name="srcPath" value="D:\mysql-5.6.19-winx64.zip"/>
+                        <label for="srcPath">srcPath</label><input type="text" class="form-control" id="srcPath" name="srcPath" value="D:\mysql-5.6.35-winx64.zip"/>
                     </div>
                     <div class="form-group">
-                        <label for="port">port</label><input type="text" class="form-control" id="port" name="port" value="3306"/>
+                        <label for="port">port</label><input type="text" class="form-control" id="port" name="port" value="3308"/>
                     </div>
                     <div class="form-group">
-                        <label for="serviceName">serviceName</label><input type="text" class="form-control" id="serviceName" name="serviceName" value="mysql"/>
+                        <label for="serviceName">serviceName</label><input type="text" class="form-control" id="serviceName" name="serviceName" value="mysql_3308"/>
                     </div>
 <!--                     <div class="form-group"> -->
 <!--                         <label for="dbPath">File input</label><input type="file" id="dbPath" name="dbPath"/> -->
