@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 
 import org.junit.Test;
 
+import com.cdzy.cr.util.FileUtil;
 import com.cr.web.util.OSUtil;
 
 public class CommandTest {
@@ -56,6 +57,16 @@ public class CommandTest {
             out.println(cmd); //输入你的命令
             out.flush(); //写到控制台
         } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test() {
+        try {
+            FileUtil.deleteFileDir("D:\\mysql-5.6.35-winx64");
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

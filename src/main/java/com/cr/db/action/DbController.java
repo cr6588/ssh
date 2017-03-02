@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cdzy.cr.util.FileUtil;
 import com.cr.web.bean.RequestResult;
 import com.cr.web.db.JDBC;
 import com.cr.web.util.RequestSessionUtil;
@@ -45,13 +46,15 @@ public class DbController {
     @ResponseBody
     public RequestResult<String> installDb(HttpServletRequest request, @RequestParam String srcPath,
                                            @RequestParam String port, @RequestParam String serviceName,
-                                           @RequestParam(required = false, value = "unZipPath") String unZipPath) {
+                                           @RequestParam(required = false, value = "unZipPath") String unZipPath,
+                                           @RequestParam(required = false, value = "rootPassword") String rootPassword) {
         RequestResult<String> result = new RequestResult<String>();
         StringBuffer sb = new StringBuffer();
         try {
             HttpSession session = request.getSession();
             session.setAttribute(LogKey, sb);
             String iniPath = decompress(srcPath, unZipPath, sb) + File.separator;
+            result.setBody(iniPath);
             updInstallLog(sb, 0, "解压完成<br>");
             updInstallLog(sb, 0, "更改mysql配置文件<br>");
             updMysqlConfig(iniPath + "my-default.ini", port);
@@ -73,7 +76,36 @@ public class DbController {
                     throw new Exception("启动失败<br>");
                 }
             }
-            JDBC.initUser(null, port,  null,  "654321");
+            updInstallLog(sb, 0, "初始化用户属性<br>设置root密码，删除 @localhost用户，增加用户名密码为dev的用户，刷新权限<br>");
+            JDBC.initUser(null, port,  null,  rootPassword);
+            updInstallLog(sb, 0, "初始化用户属性完成<br>");
+        } catch (Exception e) {
+            updInstallLog(sb, 0, e.getMessage());
+            e.printStackTrace();
+            logger.error(e.getMessage());
+            result.setCode(100);
+            result.setMessage(e.getMessage());
+        }
+        return result;
+    }
+
+    @RequestMapping(value = "/deleteDb", method = RequestMethod.POST)
+    @ResponseBody
+    public RequestResult<String> deleteDb(HttpServletRequest request, @RequestParam String serviceName,
+                                           @RequestParam String unZipPath) {
+        RequestResult<String> result = new RequestResult<String>();
+        StringBuffer sb = new StringBuffer();
+        try {
+            HttpSession session = request.getSession();
+            session.setAttribute(LogKey, sb);
+            updInstallLog(sb, 0, "停止mysql服务<br>");
+            String cmdStr = "net stop " + serviceName;
+            updInstallLog(sb, 0, OSUtil.exeCmd(cmdStr) + "<br>");
+            updInstallLog(sb, 0, "删除mysql服务<br>");
+            cmdStr = "sc delete " + serviceName;
+            updInstallLog(sb, 0, OSUtil.exeCmd(cmdStr) + "<br>");
+            updInstallLog(sb, 0, "删除文件目录" + unZipPath + "<br>");
+            FileUtil.deleteFileDir(unZipPath);
         } catch (Exception e) {
             updInstallLog(sb, 0, e.getMessage());
             e.printStackTrace();
@@ -113,6 +145,14 @@ public class DbController {
         }
     }
 
+    /**
+     * 解压文件src文件到dest目录
+     * @param srcPath 源文件路径
+     * @param dest 解压路径
+     * @param sb 日志字符串
+     * @return 解压目录，若压缩文件含有一层根目录则返回该根目录所在路径，否则返回dest路径
+     * @throws Exception
+     */
     public static String decompress(String srcPath, String dest, StringBuffer sb) throws Exception {
         File file = new File(srcPath);
         if (!file.exists()) {
@@ -129,6 +169,7 @@ public class DbController {
         String decompressDir = null;//解压目录，若压缩文件含有一层根目录则返回该根目录所在路径，否则返回dest路径
         while (entries.hasMoreElements()) {
             entry = (ZipEntry) entries.nextElement();
+            //判断压缩文件是否含有一层根目录，用于获取mysql绝对路径
             if(decompressDir == null) {
                 String curfirstDir = null;
                 if(entry.getName().contains("/")) { //File.separator windows:\\ entry.getName(): mysql-5.6.35-winx64/bin/echo.exe
@@ -145,6 +186,7 @@ public class DbController {
                 }
                 lastFirstDir = curfirstDir;
             }
+
             System.out.print(++line +"解压" + entry.getName() + "\r\n");
             updInstallLog(sb, 0, line + "解压" + entry.getName() + "<br>");
             if (entry.isDirectory()) {

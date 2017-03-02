@@ -157,8 +157,9 @@ public class JDBC {
      * @param port 端口 默认3306
      * @param oldPassword 旧密码 默认null
      * @param newPassword 新密码
+     * @throws Exception 
      */
-    public static void initUser(String url, String port , String oldPassword, String newPassword) {
+    public static void initUser(String url, String port , String oldPassword, String newPassword) throws Exception {
         if(url == null || url.equals("")) {
             url = "localhost";
         }
@@ -172,12 +173,14 @@ public class JDBC {
             jdbc.setSql(sql.toString());
             jdbc.getPstmt().execute(jdbc.getSql());
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            jdbc.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+            throw new Exception("初始化用户出错");
+        } finally {
+            try {
+                jdbc.close();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
     }
 
