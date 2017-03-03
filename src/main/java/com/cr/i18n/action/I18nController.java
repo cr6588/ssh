@@ -6,8 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.cr.i18n.service.I18nSer;
 import com.cr.web.annotation.PagerResolver;
 import com.cr.web.bean.I18n;
@@ -26,15 +26,24 @@ import com.cr.web.bean.RequestResult;
 import com.cr.web.bean.User;
 import com.cr.web.util.RequestSessionUtil;
 
-@Controller
+@Component
 @RequestMapping("/i18n")
 public class I18nController {
 	Logger logger = Logger.getLogger(I18nController.class);
 
-	@Autowired
+	@Reference
 	private I18nSer i18nSer;
+	
 	// @Autowired
 	// private MessageUtil messageUtil;
+
+    public I18nSer getI18nSer() {
+        return i18nSer;
+    }
+
+    public void setI18nSer(I18nSer i18nSer) {
+        this.i18nSer = i18nSer;
+    }
 
     @RequestMapping(value = "/{pageName}", method = RequestMethod.GET)
     public ModelAndView viewAdminManagePages(HttpServletRequest request, @PathVariable("pageName") String pageName) throws Exception {

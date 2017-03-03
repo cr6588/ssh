@@ -3,69 +3,34 @@ package com.cr.i18n.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.cr.i18n.dao.I18nDao;
-import com.cr.i18n.dao.impl.UserDao;
 import com.cr.web.bean.I18n;
 import com.cr.web.bean.PagerInfo;
 import com.cr.web.bean.User;
 
+public interface I18nSer {
 
-@Service
-public class I18nSer {
+    List<I18n> getI18nList(Map<String, Object> param, PagerInfo pager) throws Exception;
 
-    @Autowired
-    private I18nDao i18nDao;
-    @Autowired
-    private UserDao userDao;
+    I18n getI18n(Map<String, Object> param) throws Exception;
 
-    public List<I18n> getI18nList(Map<String, Object> param, PagerInfo pager) throws Exception{
-        return i18nDao.getI18nList(param, pager);
-    }
+    void addI18n(I18n i18n) throws Exception;
 
-    public I18n getI18n(Map<String, Object> param) throws Exception {
-        return i18nDao.getI18n(param);
-    }
+    void updateI18n(I18n i18n) throws Exception;
 
-    public void addI18n(I18n i18n) throws Exception {
-        i18nDao.addI18n(i18n);
-    }
+    void deleteI18n(Long no) throws Exception;
 
-    public void updateI18n(I18n i18n) throws Exception {
-        i18nDao.updateI18n(i18n);
-    }
+    int getI18nListCnt(Map<String, Object> params) throws Exception;
 
-    public void deleteI18n(Long no) throws Exception {
-        i18nDao.deleteI18n(no);
-    }
+    List<User> getUserList(Map<String, Object> param, PagerInfo pager) throws Exception;
 
-    public int getI18nListCnt(Map<String, Object> params) throws Exception {
-        return i18nDao.getI18nListCnt(params);
-    }
+    User getUser(Map<String, Object> param) throws Exception;
 
-    public List<User> getUserList(Map<String, Object> param, PagerInfo pager) throws Exception{
-        return userDao.getUserList(param, pager);
-    }
+    void addUser(User user) throws Exception;
 
-    public User getUser(Map<String, Object> param) throws Exception {
-        return userDao.getUser(param);
-    }
+    void updateUser(User user) throws Exception;
 
-    public void addUser(User user) throws Exception {
-        userDao.addUser(user);
-    }
+    void deleteUser(Long id) throws Exception;
 
-    public void updateUser(User user) throws Exception {
-        userDao.updateUser(user);
-    }
+    int getUserListCnt(Map<String, Object> params) throws Exception;
 
-    public void deleteUser(Long id) throws Exception {
-        userDao.deleteUser(id);
-    }
-
-    public int getUserListCnt(Map<String, Object> params) throws Exception {
-        return userDao.getUserListCnt(params);
-    }
 }

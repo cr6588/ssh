@@ -1,3 +1,4 @@
+com\cr\MainService.class
 com\cr\web\message\Messages.class
 com\cr\web\limit\dialect\Dialect.class
 com\cr\web\bean\I18n.class
@@ -7,12 +8,17 @@ com\cr\i18n\dao\I18nDao.class
 com\cr\web\bean\RequestResult.class
 com\cr\i18n\dao\impl\UserDaoImpl.class
 com\cr\web\bean\User.class
+com\cr\web\db\DynamicDataSource.class
+com\cr\i18n\service\I18nSerImpl.class
 com\cr\web\bean\PagerInfo.class
 com\cr\web\util\ReflectUtil.class
 com\cr\i18n\dao\impl\I18nDaoImpl.class
+com\cr\web\db\DynamicDataSourceHolder.class
 com\cr\web\action\WebController.class
 com\cr\web\annotation\PagerResolver.class
+com\cr\web\db\DataSourceAspect.class
 com\cr\web\util\BaseHibernateDao.class
+com\cr\web\util\PagerArgumentResolver.class
 com\cr\web\limit\dialect\MysqlDialect.class
 com\cr\web\bean\PagerStruct.class
 com\cr\web\limit\dialect\OracleDialect.class
@@ -22,3 +28,4 @@ com\cr\web\message\DataBaseMessageResource.class
 com\cr\web\action\RuterController.class
 com\cr\i18n\service\I18nSer.class
 com\cr\web\bean\MasterData.class
+com\cr\i18n\dao\impl\UserDao.class
