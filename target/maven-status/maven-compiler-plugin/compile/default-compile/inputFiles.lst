@@ -1,6 +1,8 @@
 D:\git\ssh\src\main\java\com\cr\web\bean\MasterData.java
+D:\git\ssh\src\main\java\com\cr\dubbo\service\dubbo\DubboSer.java
 D:\git\ssh\src\main\java\com\cr\i18n\service\I18nSer.java
 D:\git\ssh\src\main\java\com\cr\web\annotation\PagerResolver.java
+D:\git\ssh\src\main\java\com\cr\dubbo\service\dubbo\DubboServiceImpl.java
 D:\git\ssh\src\main\java\com\cr\web\db\DataSourceAspect.java
 D:\git\ssh\src\main\java\com\cr\i18n\service\I18nSerImpl.java
 D:\git\ssh\src\main\java\com\cr\web\bean\Language.java
@@ -8,6 +10,7 @@ D:\git\ssh\src\main\java\com\cr\web\action\RuterController.java
 D:\git\ssh\src\main\java\com\cr\web\db\DynamicDataSourceHolder.java
 D:\git\ssh\src\main\java\com\cr\web\util\RequestSessionUtil.java
 D:\git\ssh\src\main\java\com\cr\i18n\dao\impl\UserDao.java
+D:\git\ssh\src\main\java\com\cr\dubbo\service\mvc\DubboSerMVCImpl.java
 D:\git\ssh\src\main\java\com\cr\web\bean\PagerInfo.java
 D:\git\ssh\src\main\java\com\cr\web\message\DataBaseMessageResource.java
 D:\git\ssh\src\main\java\com\cr\web\bean\PagerStruct.java
@@ -18,6 +21,7 @@ D:\git\ssh\src\main\java\com\cr\web\message\MessageUtil.java
 D:\git\ssh\src\main\java\com\cr\i18n\dao\impl\I18nDaoImpl.java
 D:\git\ssh\src\main\java\com\cr\web\db\DynamicDataSource.java
 D:\git\ssh\src\main\java\com\cr\web\bean\User.java
+D:\git\ssh\src\main\java\com\cr\dubbo\action\DubboController.java
 D:\git\ssh\src\main\java\com\cr\web\util\BaseHibernateDao.java
 D:\git\ssh\src\main\java\com\cr\web\message\Messages.java
 D:\git\ssh\src\main\java\com\cr\i18n\dao\I18nDao.java

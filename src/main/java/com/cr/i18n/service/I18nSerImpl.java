@@ -14,7 +14,7 @@ import com.cr.web.bean.User;
 
 
 //@Service
-@Service //dubbo
+@Service(version = "1.0.0") //dubbo
 //@Component
 public class I18nSerImpl implements I18nSer {
 

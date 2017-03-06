@@ -1,3 +1,4 @@
+com\cr\dubbo\service\dubbo\DubboServiceImpl.class
 com\cr\MainService.class
 com\cr\web\message\Messages.class
 com\cr\web\limit\dialect\Dialect.class
@@ -6,6 +7,7 @@ com\cr\web\message\MessageUtil.class
 com\cr\web\util\RequestSessionUtil.class
 com\cr\i18n\dao\I18nDao.class
 com\cr\web\bean\RequestResult.class
+com\cr\dubbo\service\mvc\DubboSerMVCImpl.class
 com\cr\i18n\dao\impl\UserDaoImpl.class
 com\cr\web\bean\User.class
 com\cr\web\db\DynamicDataSource.class
@@ -22,10 +24,12 @@ com\cr\web\util\PagerArgumentResolver.class
 com\cr\web\limit\dialect\MysqlDialect.class
 com\cr\web\bean\PagerStruct.class
 com\cr\web\limit\dialect\OracleDialect.class
+com\cr\dubbo\service\dubbo\DubboSer.class
 com\cr\i18n\action\I18nController.class
 com\cr\web\bean\Language.class
 com\cr\web\message\DataBaseMessageResource.class
 com\cr\web\action\RuterController.class
+com\cr\dubbo\action\DubboController.class
 com\cr\i18n\service\I18nSer.class
 com\cr\web\bean\MasterData.class
 com\cr\i18n\dao\impl\UserDao.class

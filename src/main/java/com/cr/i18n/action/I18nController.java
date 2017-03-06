@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,7 @@ import com.cr.web.bean.RequestResult;
 import com.cr.web.bean.User;
 import com.cr.web.util.RequestSessionUtil;
 
-@Component
+@Controller
 @RequestMapping("/i18n")
 public class I18nController {
 	Logger logger = Logger.getLogger(I18nController.class);
@@ -36,14 +37,6 @@ public class I18nController {
 	
 	// @Autowired
 	// private MessageUtil messageUtil;
-
-    public I18nSer getI18nSer() {
-        return i18nSer;
-    }
-
-    public void setI18nSer(I18nSer i18nSer) {
-        this.i18nSer = i18nSer;
-    }
 
     @RequestMapping(value = "/{pageName}", method = RequestMethod.GET)
     public ModelAndView viewAdminManagePages(HttpServletRequest request, @PathVariable("pageName") String pageName) throws Exception {

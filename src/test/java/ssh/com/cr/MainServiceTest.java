@@ -3,6 +3,7 @@ package ssh.com.cr;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.cr.dubbo.service.dubbo.DubboSer;
 import com.cr.i18n.service.I18nSer;
 
 public class MainServiceTest {
@@ -24,4 +25,20 @@ public class MainServiceTest {
  
     }
 
+    @Test
+    public void testDubboSer() {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"classpath:dubbo-client.xml"});
+        context.start();
+ 
+        DubboSer demoService = (DubboSer)context.getBean("dubboServiceImpl"); // 获取远程服务代理
+        int hello;
+        try {
+            hello = demoService.add();
+            System.out.println( hello ); // 显示调用结果
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } // 执行远程方法
+ 
+    }
 }
