@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cr.dubbo.service.mvc.DubboSerMVCImpl;
+import com.cr.dubbo.service.dubbo.DubboService;
 import com.cr.web.util.RequestSessionUtil;
 
 @Controller
 @RequestMapping("/dubbo")
 public class DubboController {
 
-//    @Reference(version="1.0.0")
+//	@Reference(version="1.0.0")
+	@Autowired
+    DubboService dubboService;
 //    @Autowired
-//    DubboSer dubboSer;
-    @Autowired
-    DubboSerMVCImpl dubboSer;
+//    DubboSerMVCImpl dubboSer;
 
     @RequestMapping(value = "/{pageName}", method = RequestMethod.GET)
     public ModelAndView viewAdminManagePages(HttpServletRequest request, @PathVariable("pageName") String pageName) throws Exception {
         String path = RequestSessionUtil.getDevicePath(request) + "/dubbo/" + pageName;
-        System.out.println(dubboSer.add());
+        System.out.println(dubboService.add());
         return new ModelAndView(path, RequestSessionUtil.getRequestParamData(request));
     }
 
     @RequestMapping("/add")
     @ResponseBody
     public int add() {
-        return dubboSer.add();
+        return dubboService.add();
     }
 }
