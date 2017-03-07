@@ -193,7 +193,27 @@ public class JDBC {
         return sb.toString();
     }
 
-    
+    public static void conUnknownDb() {
+        JDBC jdbc = new JDBC("jdbc:mysql://localhost:3306?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8", "dev", "dev");
+        String sql = "show databases";
+        jdbc.setSql(sql);
+        try {
+            ResultSet rs = jdbc.getStmt().executeQuery(sql);
+            jdbc.setRs(rs);
+            while (rs.next()) {
+                String str = rs.getString(1);
+                System.out.println(str);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            jdbc.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         JDBC jdbc = new JDBC("jdbc:mysql://localhost:3306/test?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8", "dev", "dev");
         String sql = "select * from i18n";
