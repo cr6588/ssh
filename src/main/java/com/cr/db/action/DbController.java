@@ -211,7 +211,7 @@ public class DbController {
                 fos.close();
             }
         }
-
+        zf.close();
         if(decompressDir == null) {
             decompressDir = dest + lastFirstDir;
         }

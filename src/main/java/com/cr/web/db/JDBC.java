@@ -173,6 +173,7 @@ public class JDBC {
             jdbc.setSql(sql.toString());
             jdbc.getPstmt().execute(jdbc.getSql());
         } catch (Exception e) {
+        	e.printStackTrace();
             throw new Exception("初始化用户出错");
         } finally {
             try {

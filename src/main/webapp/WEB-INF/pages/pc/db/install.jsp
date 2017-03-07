@@ -88,14 +88,16 @@
     }
     var mysqlPath = "";
     function installDb() {
-       $(".install").attr("disabled", true); 
+       $(".install").attr("disabled", true);
        $.post('<%out.print(hostName);%>/db/installDb', $("form").serialize(), function(result) {
                    clearInterval(interval);
-    //                if(result.code == 0) {
-    //                }
-                    mysqlPath = result.body;
-                    $(".delete").show();
-                    $(".delete").attr("disabled", false); 
+                   if(result.code != 0) {
+              	   		$(".install").attr("disabled", false); 
+                   } else {
+	                    mysqlPath = result.body;
+	                    $(".delete").show();
+	                    $(".delete").attr("disabled", false); 
+                   }
                    //暂停后有可能最后一次日志没打印出来
                    getLog();
                });
