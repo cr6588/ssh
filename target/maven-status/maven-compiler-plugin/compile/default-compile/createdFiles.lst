@@ -24,7 +24,6 @@ com\cr\web\util\PagerArgumentResolver.class
 com\cr\web\limit\dialect\MysqlDialect.class
 com\cr\web\bean\PagerStruct.class
 com\cr\web\limit\dialect\OracleDialect.class
-com\cr\dubbo\service\dubbo\DubboSer.class
 com\cr\i18n\action\I18nController.class
 com\cr\web\bean\Language.class
 com\cr\web\message\DataBaseMessageResource.class
