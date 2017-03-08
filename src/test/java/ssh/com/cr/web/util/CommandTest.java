@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 
 import org.junit.Test;
 
-import com.cdzy.cr.util.FileUtil;
+import com.cr.util.FileUtil;
 import com.cr.web.util.OSUtil;
 
 public class CommandTest {

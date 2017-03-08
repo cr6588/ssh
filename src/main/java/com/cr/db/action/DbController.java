@@ -12,9 +12,10 @@ import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
 import org.apache.tools.zip.ZipEntry;
 import org.apache.tools.zip.ZipFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,18 +24,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cdzy.cr.util.FileUtil;
+import com.cr.util.FileUtil;
+import com.cr.util.db.JDBC;
 import com.cr.web.bean.RequestResult;
-import com.cr.web.db.JDBC;
-import com.cr.web.util.RequestSessionUtil;
 import com.cr.web.util.OSUtil;
+import com.cr.web.util.RequestSessionUtil;
 
 @Controller
 @RequestMapping("/db")
 public class DbController {
     private static final String LogKey = "installLog";
 
-    Logger logger = Logger.getLogger(DbController.class);
+    Logger logger = LoggerFactory.getLogger(DbController.class);
 
     @RequestMapping(value = "/{pageName}", method = RequestMethod.GET)
     public ModelAndView viewAdminManagePages(HttpServletRequest request, @PathVariable("pageName") String pageName) throws Exception {
@@ -77,7 +78,9 @@ public class DbController {
                 }
             }
             updInstallLog(sb, 0, "初始化用户属性<br>设置root密码，删除 @localhost用户，增加用户名密码为dev的用户，刷新权限<br>");
-            JDBC.initUser(null, port,  null,  rootPassword);
+            JDBC jdbc = new JDBC(null, port , "root", null);
+            jdbc.initUser(rootPassword);
+//            JDBC.initUser(null, port,  null,  rootPassword);
             updInstallLog(sb, 0, "初始化用户属性完成<br>");
         } catch (Exception e) {
             updInstallLog(sb, 0, e.getMessage());

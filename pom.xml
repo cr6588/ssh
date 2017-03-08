@@ -21,7 +21,7 @@
         <!-- <version>1.0</version> -->
         <!-- </dependency> -->
         <dependency>
-            <groupId>com.cdzy</groupId>
+            <groupId>com.cr</groupId>
             <artifactId>cr-util</artifactId>
             <version>0.0.1</version>
         </dependency>
