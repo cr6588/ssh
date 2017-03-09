@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/resources/css/ext4.2.1/ext-theme-gray/ext-theme-gray-all.css" rel="stylesheet" type="text/css" />
-<link href="/resources/css/ext4.2.1/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/resources/js/jquery/jquery-1.10.2.js"></script>
-<script src="/resources/js/ext4.2.1/ext-all.js" type="text/javascript" ></script>
-<script src="/resources/js/ext4.2.1/ext-lang-zh_CN.js" type="text/javascript" ></script>
+<link href="/ssh/resources/css/ext4.2.1/ext-theme-gray/ext-theme-gray-all.css" rel="stylesheet" type="text/css" />
+<link href="/ssh/resources/css/ext4.2.1/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/ssh/resources/js/jquery/jquery-1.10.2.js"></script>
+<script src="/ssh/resources/js/ext4.2.1/ext-all.js" type="text/javascript" ></script>
+<script src="/ssh/resources/js/ext4.2.1/ext-lang-zh_CN.js" type="text/javascript" ></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="/resources/js/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="/ssh/resources/js/jquery/jquery-1.10.2.js"></script>
 <title>xxxx系统</title>
 </head>
 <body>
@@ -83,7 +83,7 @@ Ext.onReady(function () { //所有都加上此处代码确保ExtJs加载完成
                 collapsible : true,
                 split : true
             }, {
-                title : 'west',
+                title : '',
                 region : 'west',
                 width : 200,
                 html : '<p>111</p>',
@@ -93,7 +93,7 @@ Ext.onReady(function () { //所有都加上此处代码确保ExtJs加载完成
                 maxWidth : 300,
                 layout: 'accordion',//下面的栏位是否可折叠
                 items : [ {
-                    title : '第一栏',
+                    title : '系统管理',
                     items : [tree]
                 }, {
                     title : '第二栏',
