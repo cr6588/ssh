@@ -1,7 +1,6 @@
 package com.cr.i18n.dao.impl;
 // Generated 2017-2-13 15:02:12 by Hibernate Tools 3.4.0.CR1
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -23,58 +22,49 @@ public class UserDaoImpl implements UserDao {
 
     @Autowired
     private SessionFactory sessionFactory;
-    
+
     public void delete(User persistentInstance) {
         try {
             sessionFactory.getCurrentSession().delete(persistentInstance);
-        }
-        catch (RuntimeException re) {
+        } catch (RuntimeException re) {
             throw re;
         }
     }
-    
+
     public User merge(User detachedInstance) {
         try {
-            User result = (User) sessionFactory.getCurrentSession()
-                    .merge(detachedInstance);
+            User result = (User) sessionFactory.getCurrentSession().merge(detachedInstance);
             return result;
-        }
-        catch (RuntimeException re) {
+        } catch (RuntimeException re) {
             throw re;
         }
     }
-    
+
     public User findById(Long id) {
         try {
-            User instance = (User) sessionFactory.getCurrentSession()
-                    .get("User", id);
-            if (instance==null) {
-            }
-            else {
+            User instance = (User) sessionFactory.getCurrentSession().get("User", id);
+            if (instance == null) {
+            } else {
             }
             return instance;
-        }
-        catch (RuntimeException re) {
+        } catch (RuntimeException re) {
             throw re;
         }
     }
-    
+
     public List findByExample(User instance) {
         try {
-            List results = sessionFactory.getCurrentSession()
-                    .createCriteria("User")
-                    .add(Example.create(instance))
-            .list();
+            List results = sessionFactory.getCurrentSession().createCriteria("User").add(Example.create(instance)).list();
             return results;
-        }
-        catch (RuntimeException re) {
+        } catch (RuntimeException re) {
             throw re;
         }
-    } 
-    
+    }
 
-    /* (non-Javadoc)
-     * @see com.cr.i18n.dao.impl.UserDao#getUserList(java.util.Map, com.cr.web.bean.PagerInfo)
+    /*
+     * (non-Javadoc)
+     * @see com.cr.i18n.dao.impl.UserDao#getUserList(java.util.Map,
+     * com.cr.web.bean.PagerInfo)
      */
     @Override
     public List<User> getUserList(Map<String, Object> param, PagerInfo pager) throws Exception {
@@ -88,7 +78,8 @@ public class UserDaoImpl implements UserDao {
         return i18s;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.cr.i18n.dao.impl.UserDao#getUser(java.util.Map)
      */
     @Override
@@ -96,7 +87,7 @@ public class UserDaoImpl implements UserDao {
         String hsql = "";
         if (param.get("id") != null) {
             hsql = "from User where id = ?";// +
-                                                      // param.get("language");
+                                            // param.get("language");
         }
         Query query = sessionFactory.getCurrentSession().createQuery(hsql);
         if (param.get("id") != null) {
@@ -111,7 +102,8 @@ public class UserDaoImpl implements UserDao {
         return User;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.cr.i18n.dao.impl.UserDao#addUser(com.cr.web.bean.User)
      */
     @Override
@@ -119,7 +111,8 @@ public class UserDaoImpl implements UserDao {
         sessionFactory.getCurrentSession().save(user);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.cr.i18n.dao.impl.UserDao#updateUser(com.cr.web.bean.User)
      */
     @Override
@@ -127,7 +120,8 @@ public class UserDaoImpl implements UserDao {
         sessionFactory.getCurrentSession().update(User);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.cr.i18n.dao.impl.UserDao#deleteUser(java.lang.Long)
      */
     @Override
@@ -135,10 +129,11 @@ public class UserDaoImpl implements UserDao {
         Query query = sessionFactory.getCurrentSession().createQuery("delete User where id = ?");
         query.setLong(0, id);
         query.executeUpdate();
-        query.executeUpdate();  
+        query.executeUpdate();
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.cr.i18n.dao.impl.UserDao#getUserListCnt(java.util.Map)
      */
     @Override
@@ -149,4 +144,3 @@ public class UserDaoImpl implements UserDao {
         return count;
     }
 }
-

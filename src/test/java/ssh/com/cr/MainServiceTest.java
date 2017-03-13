@@ -17,7 +17,7 @@ public class MainServiceTest {
         int hello;
         try {
             hello = demoService.getUserListCnt(null);
-            System.out.println( hello ); // 显示调用结果
+            System.out.println( "***********************************************************" + hello ); // 显示调用结果
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
